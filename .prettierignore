@@ -1,0 +1,10 @@
+.next
+.cache
+public
+node_modules
+next-env.d.ts
+next.config.js
+yarn.lock
+postcss.config.js
+*.json
+*.md
