@@ -13,11 +13,11 @@ export default function Home() {
                     name='viewport'
                     content='width=device-width, initial-scale=1'
                 />
-                <link rel='icon' href='/favicon.ico' />
             </Head>
             <main className='flex h-screen w-screen items-center justify-center'>
                 <h1 className='rounded-3xl bg-amber-400 p-6 text-3xl font-bold text-white'>
-                    Salam Bache Khoshgel
+                    Which would be worse - to live as a monster, or to die as a
+                    good man?
                 </h1>
             </main>
         </>
