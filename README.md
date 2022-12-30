@@ -24,7 +24,7 @@ you can use this boilerplate to create your own next-js app
 
 Run the following command on your local environment:
 
-```http
+```
   git clone --depth=1 https://github.com/Poldark8/Nextjs-Boilerplate.git my-project-name
   cd my-project-name
   yarn
@@ -32,7 +32,7 @@ Run the following command on your local environment:
 
 Then, you can must run this:
 
-```http
+```
   yarn dev
 ```
 
@@ -46,7 +46,7 @@ You must use - [Conventional Commits](https://www.conventionalcommits.org/en/v1.
 
 Run the following command on your terminal:
 
-```http
+```
    yarn build
    yarn start
   ```
