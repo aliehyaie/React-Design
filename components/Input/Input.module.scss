@@ -1,0 +1,38 @@
+.label{
+      @apply text-grey-4 w-max text-xs;
+
+    &:focus-within{
+      @apply text-text;
+    }
+
+    &.readOnly{
+      @apply text-grey-4;
+    }
+
+    .input{
+      @apply rounded-xl outline-0 w-[280px] text-text border transition-all duration-200 border-grey-6 px-3 py-3
+      text-sm;
+
+      &.hasIconRight{
+        @apply pr-8;
+      }
+
+      &:focus{
+        @apply border-primary;
+      }
+
+      &:hover{
+        @apply border-grey-7;
+      }
+
+      &:read-only{
+        @apply bg-grey-6 border-grey-6 cursor-auto;
+      }
+
+      &:disabled{
+        @apply border-disabled bg-white;
+      }
+    }
+  }
+
+
