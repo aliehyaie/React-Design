@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Checkbox from '../components/Checkbox/Checkbox';
 import React from 'react';
+import Button from '../components/Button/Button';
 
 export default function Home() {
     return (
@@ -17,7 +17,7 @@ export default function Home() {
                 />
             </Head>
             <main className='flex h-screen w-screen items-center justify-center'>
-                <Checkbox label='Hi' />
+                <Button isLoading className='w-48' />
             </main>
         </>
     );

@@ -55,6 +55,19 @@ module.exports = {
             // => @media (max-width: 1024px) { ... }
         },
         extend: {
+            keyframes: {
+                'dot-flashing': {
+                    '0%': {
+                        backgroundColor: '#1D82DD',
+                    },
+                    '50%, 100%': {
+                        backgroundColor: '#1D82DD20',
+                    },
+                },
+            },
+            content: {
+                empty: '',
+            },
             transitionProperty: {
                 width: 'width',
                 height: 'height',
