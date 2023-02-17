@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Checkbox from '../components/Checkbox/Checkbox';
+import React from 'react';
 
 export default function Home() {
     return (
@@ -15,10 +17,7 @@ export default function Home() {
                 />
             </Head>
             <main className='flex h-screen w-screen items-center justify-center'>
-                <h1 className='rounded-3xl bg-amber-400 p-6 text-3xl font-bold text-white'>
-                    Which would be worse - to live as a monster, or to die as a
-                    good man?
-                </h1>
+                <Checkbox label='Hi' />
             </main>
         </>
     );

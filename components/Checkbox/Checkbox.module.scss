@@ -1,0 +1,39 @@
+.label {
+    @apply inline-flex items-center gap-2 cursor-pointer;
+
+    &:hover .checkbox .checkboxInput + .btn {
+        @apply bg-grey-2;
+        :global(.icon-checkmark) {
+            @apply opacity-100;
+        }
+    }
+
+    .checkbox {
+        @apply relative inline-block w-5 h-5;
+
+        & .checkboxInput {
+            @apply hidden;
+
+            &:checked + .btn {
+                @apply bg-primary;
+
+                :global(.icon-checkmark) {
+                    @apply opacity-100;
+                }
+            }
+
+            &:disabled + .btn {
+                @apply bg-grey-3;
+            }
+        }
+
+        .btn {
+            @apply flex justify-center items-center h-full absolute cursor-pointer inset-0 transition-all duration-200 bg-grey-1
+      disabled:bg-grey-3 rounded;
+
+            :global(.icon-checkmark) {
+                @apply opacity-0;
+            }
+        }
+    }
+}
