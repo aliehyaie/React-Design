@@ -1,7 +1,6 @@
 import React from 'react';
-import { IIcon } from '../Icon/IIcon';
 
-export interface IInput extends React.HTMLProps<HTMLInputElement>, IIcon {
+export interface IInput extends React.HTMLProps<HTMLInputElement> {
     className?: string;
     labelClassName?: string;
     iconRightName?: string;
