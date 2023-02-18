@@ -1,0 +1,29 @@
+.label {
+  @apply inline-flex items-center gap-2 cursor-pointer;
+
+  &:hover .radio{
+    @apply after:scale-100 hover:bg-grey-2;
+  }
+
+  .radioInput {
+    @apply hidden;
+
+    &:checked + .radio {
+      @apply bg-primary;
+
+      &:after {
+        @apply scale-100;
+      }
+    }
+
+    &:disabled + .radio {
+      @apply bg-grey-3;
+    }
+  }
+
+  .radio {
+    @apply w-5 h-5 rounded-full bg-grey-1 flex justify-center transition-all duration-300 items-center after:block after:w-2 after:h-2 after:bg-white
+    after:rounded-full
+    after:scale-0;
+  }
+}
