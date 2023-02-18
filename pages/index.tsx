@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import Button from '../components/Button/Button';
+import Switch from '../components/Switch/Switch';
 
 export default function Home() {
     return (
@@ -17,7 +17,7 @@ export default function Home() {
                 />
             </Head>
             <main className='flex h-screen w-screen items-center justify-center'>
-                <Button isLoading className='w-48' />
+                <Switch />
             </main>
         </>
     );
