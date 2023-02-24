@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import Switch from '../components/Switch/Switch';
+import { Accordion } from '../components/Accordion/Accordion';
 
 export default function Home() {
     return (
@@ -17,7 +17,24 @@ export default function Home() {
                 />
             </Head>
             <main className='flex h-screen w-screen items-center justify-center'>
-                <Switch />
+                <Accordion
+                    accordionItems={[
+                        {
+                            title: 'Question1',
+                            id: 'Question1',
+                            content:
+                                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dignissimos dolore earum e' +
+                                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dignissimos dolore earum e Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dignissimos dolore earum e' +
+                                ' Cumque dignissimos dolore earum explicabo incidunt omnis pariatur repellat sapiente soluta voluptate?',
+                        },
+                        {
+                            title: 'Question2',
+                            id: 'Question2',
+                            content:
+                                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium ad animi aspernatur aut beatae culpa eius esse expedita fugit hic ipsa laboriosam laborum maxime optio, quis sint tempora ullam vitae voluptatum. Eum, facere, possimus!',
+                        },
+                    ]}
+                />
             </main>
         </>
     );
