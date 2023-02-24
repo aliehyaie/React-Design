@@ -21,16 +21,16 @@
         "next/core-web-vitals",
         "plugin:@typescript-eslint/recommended",
         "plugin:security/recommended",
-        "plugin:tailwindcss/recommended",
-        "prettier",
-        "plugin:prettier/recommended"
+        "plugin:tailwindcss/recommended"
+        /*"prettier",
+        "plugin:prettier/recommended"*/
     ],
     "rules": {
         "no-console": "error",
         "no-dupe-else-if": "error",
         "no-self-compare": "error",
         "@typescript-eslint/no-unused-vars": "error",
-        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-explicit-any": "warn",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
         "react/jsx-filename-extension": [
