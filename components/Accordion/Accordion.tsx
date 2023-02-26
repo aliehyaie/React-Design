@@ -15,16 +15,19 @@ const AccordionItem: React.FC<IAccordionItem> = ({
     useEffect(() => {
         setIsVisible(isActive);
     }, [isActive]);
-    const toggleAccordionItemHandler = () => {
+    const toggleAccordionItemHandler = (
+        e: React.MouseEvent<HTMLDivElement>
+    ) => {
+        e.stopPropagation();
         setIsVisible(prevState => !prevState);
     };
     return (
         <div className={`${classes.item} ${itemClassName}`}>
             <div
                 className={classes.title}
-                onClick={() =>
+                onClick={e =>
                     isMultiple
-                        ? toggleAccordionItemHandler()
+                        ? toggleAccordionItemHandler(e)
                         : toggleOnlyOneAccordionItemHandler(accordionItem.id)
                 }
             >
@@ -39,6 +42,14 @@ const AccordionItem: React.FC<IAccordionItem> = ({
             >
                 {accordionItem.content}
             </Text>
+            {accordionItem?.children && (
+                <Accordion
+                    className={`mt-2 ${classes.content} ${
+                        isVisible ? classes.show : ''
+                    }`}
+                    accordionItems={accordionItem.children}
+                />
+            )}
         </div>
     );
 };

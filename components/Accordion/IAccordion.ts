@@ -4,6 +4,7 @@ interface AccordionItem {
     id: string | number;
     title: string | React.ReactElement;
     content: string | React.ReactElement;
+    children?: AccordionItem[];
 }
 
 export interface IAccordion {
