@@ -2,16 +2,18 @@
 }
 
 .h2 {
-    @apply text-2xl;
+    @apply text-2xl font-semibold;
 }
 
 .h3 {
 }
 
 .h4 {
+    @apply text-xl font-semibold;
 }
 
 .h5 {
+    @apply text-lg font-semibold;
 }
 
 .h6 {

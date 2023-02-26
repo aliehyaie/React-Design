@@ -6,11 +6,11 @@
   &.tonal {
 
     &.normal {
-      @apply rounded-[100px] w-[84px] h-[46px]  text-sm;
+      @apply rounded-xl w-[84px] h-[46px]  text-sm;
     }
 
     &.chips {
-      @apply rounded-[100px] w-[110px] h-[32px]  text-xs;
+      @apply rounded-xl w-[110px] h-[32px]  text-xs;
     }
 
     &.leading{
