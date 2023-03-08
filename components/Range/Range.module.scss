@@ -1,0 +1,36 @@
+.slider {
+  @apply h-1 rounded bg-grey-6 relative w-[300px];
+
+  .progress {
+    @apply h-1 bg-success rounded absolute /*inset-x-1/4*/;
+  }
+}
+
+.rangeInput {
+  @apply relative;
+
+  .rangeMin,
+  .rangeMax{
+    @apply absolute -top-1 h-1 w-full bg-transparent pointer-events-none;
+    -webkit-appearance: none;
+  }
+
+  input[type='range']::-webkit-slider-thumb{
+    @apply w-4 h-4 rounded-full bg-success pointer-events-auto;
+    -webkit-appearance: none;
+  }
+
+  input[type='range']::-moz-range-thumb{
+    @apply w-4 h-4 border-none rounded-full bg-success pointer-events-auto;
+    -moz-appearance: none;
+
+  }
+
+    .rangeMin {
+
+  }
+
+  .rangeMax{
+
+  }
+}
