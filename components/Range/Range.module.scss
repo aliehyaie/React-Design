@@ -1,8 +1,12 @@
 .slider {
-  @apply h-1 rounded bg-grey-6 relative w-[300px];
+  @apply h-1 rounded bg-grey-6 relative w-[300px] overflow-hidden;
 
   .progress {
     @apply h-1 bg-success rounded absolute /*inset-x-1/4*/;
+  }
+
+  .stepIndicator{
+    @apply h-1 w-1  bg-secondary;
   }
 }
 
@@ -15,22 +19,14 @@
     -webkit-appearance: none;
   }
 
-  input[type='range']::-webkit-slider-thumb{
-    @apply w-4 h-4 rounded-full bg-success pointer-events-auto;
+  .rangeMin::-webkit-slider-thumb,.rangeMax::-webkit-slider-thumb{
+    @apply w-4 h-4 rounded-full bg-success pointer-events-auto cursor-pointer;
     -webkit-appearance: none;
   }
 
-  input[type='range']::-moz-range-thumb{
-    @apply w-4 h-4 border-none rounded-full bg-success pointer-events-auto;
+  .rangeMin::-moz-range-thumb,.rangeMax::-moz-range-thumb{
+    @apply w-4 h-4 border-none rounded-full bg-success pointer-events-auto cursor-pointer;
     -moz-appearance: none;
-
-  }
-
-    .rangeMin {
-
-  }
-
-  .rangeMax{
 
   }
 }
