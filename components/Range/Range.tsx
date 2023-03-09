@@ -3,42 +3,38 @@ import classes from './Range.module.scss';
 import { IRange } from './IRange';
 
 const Range: React.FC<IRange> = ({
-    min = 0,
-    max = 10000,
-    value = [1000, 7000],
-    isSingle = false,
-    step = 1000,
-    priceGap = 1000,
+    min,
+    max,
+    value,
+    isSingle,
+    step,
+    priceGap,
+    showIndicators,
 }) => {
     const minRangeValueRef = useRef() as MutableRefObject<HTMLInputElement>;
     const maxRangeValueRef = useRef() as MutableRefObject<HTMLInputElement>;
     const progressRef = useRef() as MutableRefObject<HTMLDivElement>;
 
     useEffect(() => {
-        minRangeValueRef.current.value = !Array.isArray(value)
-            ? value.toString()
-            : value[0].toString();
+        minRangeValueRef.current.value = isSingle
+            ? value!.toString()
+            : value![0].toString();
         if (!isSingle) {
-            maxRangeValueRef.current.value = Array.isArray(value)
-                ? value[1].toString()
-                : '';
-            calculateProgress(
-                Array.isArray(value) ? value[0] : 0,
-                Array.isArray(value) ? value[1] : 0
-            );
+            maxRangeValueRef.current.value = value![1].toString();
+            calculateProgress(value![0], value![1]);
         } else {
-            calculateProgress(+value);
+            calculateProgress(+value!);
         }
     }, []);
 
     const calculateProgress = (minVal: number, maxVal?: number) => {
         if (isSingle) {
-            progressRef.current.style.right = 100 - (minVal / +max) * 100 + '%';
+            progressRef.current.style.right = 100 - (minVal / max!) * 100 + '%';
             progressRef.current.style.left = '0';
         } else {
-            progressRef.current.style.left = (minVal / +max) * 100 + '%';
+            progressRef.current.style.left = (minVal / max!) * 100 + '%';
             progressRef.current.style.right =
-                100 - (maxVal! / +max) * 100 + '%';
+                100 - (maxVal! / max!) * 100 + '%';
         }
     };
 
@@ -47,15 +43,15 @@ const Range: React.FC<IRange> = ({
         let minVal = +minRangeValueRef.current.value;
         if (!isSingle) {
             let maxVal = +maxRangeValueRef.current.value;
-            if (maxVal - minVal < priceGap) {
+            if (maxVal - minVal < priceGap!) {
                 if (rangeInputId === 'minRange') {
                     minRangeValueRef.current.value = (
-                        maxVal - priceGap
+                        maxVal - priceGap!
                     ).toString();
                     minVal = +minRangeValueRef.current.value;
                 } else {
                     maxRangeValueRef.current.value = (
-                        minVal + priceGap
+                        minVal + priceGap!
                     ).toString();
                     maxVal = +maxRangeValueRef.current.value;
                 }
@@ -69,6 +65,7 @@ const Range: React.FC<IRange> = ({
     return (
         <div className='ltr'>
             <div className={classes.slider}>
+                {showIndicators ? <></> : null}
                 <div ref={progressRef} className={classes.progress} />
             </div>
             <div className={classes.rangeInput}>
@@ -97,6 +94,15 @@ const Range: React.FC<IRange> = ({
             </div>
         </div>
     );
+};
+
+Range.defaultProps = {
+    min: 0,
+    max: 10000,
+    isSingle: true,
+    value: 0,
+    step: 1000,
+    priceGap: 1000,
 };
 
 export default Range;

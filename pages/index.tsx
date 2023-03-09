@@ -17,7 +17,7 @@ export default function Home() {
                 />
             </Head>
             <main className='mx-auto flex h-screen w-screen items-center justify-center'>
-                <Range />
+                <Range showIndicators isSingle={true} />
             </main>
         </>
     );

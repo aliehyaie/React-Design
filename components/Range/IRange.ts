@@ -1,16 +1,20 @@
 import React from 'react';
 
 export interface ISingleRange {
-    isSingle?: true;
+    isSingle: true;
     value?: number;
 }
 
 export interface IMultiRange {
-    isSingle?: false;
+    isSingle: false;
     value?: [number, number];
 }
 
 export type IRange = {
     priceGap?: number;
-} & React.HTMLProps<HTMLInputElement> &
-    (ISingleRange | IMultiRange);
+    min?: number;
+    max?: number;
+    showIndicators?: boolean;
+    step?: number;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+} & (ISingleRange | IMultiRange);
