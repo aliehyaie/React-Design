@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import React from 'react';
-import Range from '../components/Range/Range';
 
 export default function Home() {
     return (
@@ -16,9 +15,7 @@ export default function Home() {
                     content='width=device-width, initial-scale=1'
                 />
             </Head>
-            <main className='mx-auto flex h-screen w-screen items-center justify-center'>
-                <Range showIndicators isSingle={true} />
-            </main>
+            <main className='mx-auto flex h-screen w-screen items-center justify-center'></main>
         </>
     );
 }
