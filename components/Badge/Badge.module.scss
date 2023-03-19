@@ -1,0 +1,47 @@
+.badge {
+  @apply inline-block text-sm flex justify-center items-center text-white;
+}
+
+.normal {
+  @apply rounded px-2 py-1;
+}
+
+.circular {
+  @apply rounded-full w-4 h-4 p-2;
+}
+
+.absoluteBadge {
+  @apply absolute;
+}
+
+.topRight {
+  @apply -top-2 -right-2;
+}
+
+.topLeft {
+  @apply -top-2 -left-2;
+}
+
+.bottomRight {
+  @apply -bottom-2 -right-2;
+}
+
+.bottomLeft {
+  @apply -bottom-2 -left-2;
+}
+
+.success {
+  @apply bg-success;
+}
+
+.warning {
+  @apply bg-warning;
+}
+
+.error {
+  @apply bg-error;
+}
+
+.info {
+  @apply bg-info;
+}
