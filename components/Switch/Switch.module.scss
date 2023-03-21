@@ -1,44 +1,43 @@
 .switch {
-  @apply relative inline-block w-[52px] h-8;
+    @apply relative inline-block w-[52px] h-8;
 
-  & .switchInput {
-    @apply opacity-0 w-0 h-0;
+    & .switchInput {
+        @apply opacity-0 w-0 h-0;
 
-    &:checked + .slider{
-      @apply bg-primary;
+        &:checked + .slider {
+            @apply bg-primary;
 
-      .btn{
-        @apply translate-x-5;
+            .btn {
+                @apply translate-x-5;
 
-        & :global(.icon-checkmark) {
-          @apply opacity-100;
+                & :global(.icon-checkmark) {
+                    @apply opacity-100;
+                }
+            }
         }
-      }
+
+        &:disabled + .slider {
+            @apply bg-grey-3;
+        }
     }
 
-    &:disabled + .slider {
-      @apply bg-grey-3;
+    .slider {
+        @apply absolute cursor-pointer inset-0 transition-all duration-500 bg-grey-1 hover:bg-grey-2 disabled:bg-grey-3;
+
+        &.rounded {
+            @apply rounded-[34px];
+
+            .btn {
+                @apply rounded-full;
+            }
+        }
+
+        .btn {
+            @apply flex justify-center items-center absolute w-6 h-6 left-1 bottom-1 bg-white transition-all duration-500;
+
+            & :global(.icon-checkmark) {
+                @apply transition-all duration-300 opacity-0;
+            }
+        }
     }
-  }
-
-  .slider {
-    @apply absolute cursor-pointer inset-0 transition-all duration-500 bg-grey-1 hover:bg-grey-2 disabled:bg-grey-3;
-
-    &.rounded{
-      @apply rounded-[34px];
-
-      .btn{
-        @apply rounded-full;
-      }
-    }
-
-    .btn{
-      @apply flex justify-center items-center absolute w-6 h-6 left-1 bottom-1 bg-white transition-all duration-500;
-
-      & :global(.icon-checkmark) {
-        @apply transition-all duration-300 opacity-0;
-      }
-    }
-  }
 }
-

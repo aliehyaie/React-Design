@@ -1,13 +1,12 @@
 .overlay {
-  @apply fixed top-0 left-0 bottom-0 right-0 w-full h-full bg-black opacity-30 backdrop-blur-sm;
+    @apply fixed top-0 left-0 bottom-0 right-0 w-full h-full bg-black opacity-30 backdrop-blur-sm;
 }
 
 .modal {
-  @apply fixed w-[600px] min-h-[250px] p-4 top-1/2 left-1/2 -translate-x-2/4 bg-white rounded-xl
+    @apply fixed w-[600px] min-h-[250px] p-4 top-1/2 left-1/2 -translate-x-2/4 bg-white rounded-xl
   opacity-0 invisible transition-all;
-;
 }
 
 .active {
-  @apply opacity-100 visible -translate-y-2/4;
+    @apply opacity-100 visible -translate-y-2/4;
 }

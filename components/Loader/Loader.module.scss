@@ -1,16 +1,16 @@
 .dotFlashing {
-  @apply relative w-2.5 h-2.5 rounded-full bg-primary animate-[dot-flashing_1s_infinite_alternate_0.5s];
+    @apply relative w-2.5 h-2.5 rounded-full bg-primary animate-[dot-flashing_1s_infinite_alternate_0.5s];
 }
 
-.dotFlashing::before, .dotFlashing::after {
-  @apply inline-block absolute top-0 content-[''] w-2.5 h-2.5 rounded-full bg-primary;
+.dotFlashing::before,
+.dotFlashing::after {
+    @apply inline-block absolute top-0 content-[''] w-2.5 h-2.5 rounded-full bg-primary;
 }
 
 .dotFlashing::before {
-  @apply -left-4 animate-[dot-flashing_1s_infinite_alternate_0s];
+    @apply -left-4 animate-[dot-flashing_1s_infinite_alternate_0s];
 }
 
 .dotFlashing::after {
-  @apply left-4 animate-[dot-flashing_1s_infinite_alternate_1s];
+    @apply left-4 animate-[dot-flashing_1s_infinite_alternate_1s];
 }
-

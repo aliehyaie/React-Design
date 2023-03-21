@@ -24,7 +24,6 @@ const Modal: React.FC<PropsWithChildren & IModal> = ({
                     <Icon
                         onClick={onClose}
                         iconName='icon-close text-2xl cursor-pointer'
-                        size={18}
                     />
                 </div>
                 {children}
