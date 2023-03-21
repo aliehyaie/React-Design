@@ -1,32 +1,33 @@
 .slider {
-  @apply h-1 rounded bg-grey-6 relative w-[300px] overflow-hidden;
+    @apply h-1 rounded bg-grey-6 relative w-[300px] overflow-hidden;
 
-  .progress {
-    @apply h-1 bg-success rounded absolute /*inset-x-1/4*/;
-  }
+    .progress {
+        @apply h-1 bg-success rounded absolute /*inset-x-1/4*/;
+    }
 
-  .stepIndicator{
-    @apply h-1 w-1  bg-secondary;
-  }
+    .stepIndicator {
+        @apply h-1 w-1  bg-secondary;
+    }
 }
 
 .rangeInput {
-  @apply relative;
+    @apply relative;
 
-  .rangeMin,
-  .rangeMax{
-    @apply absolute -top-1 h-1 w-full bg-transparent pointer-events-none;
-    -webkit-appearance: none;
-  }
+    .rangeMin,
+    .rangeMax {
+        @apply absolute -top-1 h-1 w-full bg-transparent pointer-events-none;
+        -webkit-appearance: none;
+    }
 
-  .rangeMin::-webkit-slider-thumb,.rangeMax::-webkit-slider-thumb{
-    @apply w-4 h-4 rounded-full bg-success pointer-events-auto cursor-pointer;
-    -webkit-appearance: none;
-  }
+    .rangeMin::-webkit-slider-thumb,
+    .rangeMax::-webkit-slider-thumb {
+        @apply w-4 h-4 rounded-full bg-success pointer-events-auto cursor-pointer;
+        -webkit-appearance: none;
+    }
 
-  .rangeMin::-moz-range-thumb,.rangeMax::-moz-range-thumb{
-    @apply w-4 h-4 border-none rounded-full bg-success pointer-events-auto cursor-pointer;
-    -moz-appearance: none;
-
-  }
+    .rangeMin::-moz-range-thumb,
+    .rangeMax::-moz-range-thumb {
+        @apply w-4 h-4 border-none rounded-full bg-success pointer-events-auto cursor-pointer;
+        -moz-appearance: none;
+    }
 }
