@@ -1,0 +1,21 @@
+.paginationContainer {
+  @apply flex mt-4;
+
+  .paginationItem {
+    @apply h-8 w-8 text-center mx-1 flex justify-center items-center rounded-2xl text-sm;
+
+
+    &:hover {
+      @apply bg-grey-6 cursor-pointer;
+    }
+
+    &.selected {
+      @apply bg-grey-2;
+    }
+
+
+    &.disabled {
+      @apply pointer-events-none;
+    }
+  }
+}
