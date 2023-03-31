@@ -25,7 +25,7 @@ you can use this boilerplate to create your own next-js app
 Run the following command on your local environment:
 
 ```
-  git clone --depth=1 https://github.com/Poldark8/Nextjs-Boilerplate.git my-project-name
+  git clone https://github.com/Poldark8/Nextjs-Boilerplate.git my-project-name
   cd my-project-name
   yarn
 ```
