@@ -3,7 +3,7 @@
 }
 
 .modal {
-    @apply fixed w-[600px] min-h-[250px] p-4 top-1/2 left-1/2 -translate-x-2/4 bg-white rounded-xl
+    @apply fixed max-w-[600px] min-h-[250px] p-4 top-1/2 left-1/2 -translate-x-2/4 bg-white rounded-xl
   opacity-0 invisible transition-all;
 }
 
