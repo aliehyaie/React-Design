@@ -1,250 +1,146 @@
 .button {
-    @apply transition-all duration-200 text-sm font-medium flex justify-center items-center gap-2;
+  @apply transition-all duration-200 text-sm font-medium flex justify-center items-center gap-2 px-4;
 
-    &.filled,
-    &.outlined,
+  &.filled,
+  &.outlined,
+  &.tonal {
+    &.normal {
+      @apply rounded-xl min-w-[84px] h-[46px]  text-sm;
+    }
+
+    &.chips {
+      @apply rounded-xl min-w-[110px] h-[32px]  text-xs;
+    }
+
+    &.leading {
+      @apply min-w-[46px] h-[46px] rounded-xl;
+    }
+  }
+
+  &.text {
+    &.normal {
+      @apply text-sm;
+    }
+
+    &.chips {
+      @apply text-xs;
+    }
+  }
+
+  &.primary {
+    &.filled {
+      @apply bg-primary text-white text-sm;
+
+      &:hover {
+        @apply bg-primary-dark;
+      }
+
+      &:active {
+        @apply bg-primary-darker;
+      }
+
+      &:disabled {
+        @apply text-disabled bg-grey-3;
+      }
+    }
+
+    &.outlined {
+      @apply bg-transparent border text-primary border-primary;
+
+      &:hover {
+        @apply text-primary-dark  border-primary-dark;
+      }
+
+      &:active {
+        @apply text-primary-dark  border-primary-dark;
+      }
+
+      &:disabled {
+        @apply text-disabled  border-grey-3;
+      }
+    }
+
     &.tonal {
-        &.normal {
-            @apply rounded-xl w-[84px] h-[46px]  text-sm;
-        }
+      @apply bg-info-bg text-primary;
 
-        &.chips {
-            @apply rounded-xl w-[110px] h-[32px]  text-xs;
-        }
+      &:hover {
+        @apply bg-info-bg-dark text-primary-dark;
+      }
 
-        &.leading {
-            @apply w-[46px] h-[46px] rounded-xl;
-        }
+      &:active {
+        @apply bg-info-bg-darker text-primary-darker;
+      }
+
+      &:disabled {
+        @apply text-disabled bg-grey-3;
+      }
     }
 
     &.text {
-        &.normal {
-            @apply text-sm;
-        }
+      @apply text-primary;
 
-        &.chips {
-            @apply text-xs;
-        }
+      &:hover {
+        @apply text-primary-dark;
+      }
+
+      &:active {
+        @apply text-primary-darker;
+      }
+
+      &:disabled {
+        @apply text-disabled;
+      }
+    }
+  }
+
+  &.text {
+
+    &.outlined {
+      @apply bg-transparent border text-primary border-primary;
+
+      &:hover {
+        @apply text-primary-dark  border-primary-dark;
+      }
+
+      &:active {
+        @apply text-primary-dark  border-primary-dark;
+      }
+
+      &:disabled {
+        @apply text-disabled  border-grey-3;
+      }
     }
 
-    &.primary {
-        &.filled {
-            @apply bg-primary text-white text-sm;
+    &.tonal {
+      @apply bg-info-bg text-primary;
 
-            .icon {
-                @apply fill-white;
-            }
+      &:hover {
+        @apply bg-info-bg-dark text-primary-dark;
+      }
 
-            .iconStroke {
-                @apply stroke-white;
-            }
+      &:active {
+        @apply bg-info-bg-darker text-primary-darker;
+      }
 
-            &:hover {
-                @apply bg-primary-dark;
-                .icon {
-                    @apply fill-white;
-                }
-
-                .iconStroke {
-                    @apply stroke-white;
-                }
-            }
-
-            &:active {
-                @apply bg-primary-darker;
-            }
-
-            &:disabled {
-                @apply text-disabled bg-grey-3;
-
-                .icon {
-                    @apply fill-disabled;
-                }
-
-                .iconStroke {
-                    @apply stroke-disabled;
-                }
-            }
-        }
-
-        &.outlined,
-        &.tonal,
-        &.text {
-            .icon {
-                @apply fill-primary;
-            }
-
-            .iconStroke {
-                @apply stroke-primary;
-            }
-        }
-
-        &:hover {
-            .icon {
-                @apply fill-primary-dark;
-            }
-
-            .iconStroke {
-                @apply stroke-primary-dark;
-            }
-        }
-
-        &:active {
-            .icon {
-                @apply fill-primary-darker;
-            }
-
-            .iconStroke {
-                @apply stroke-primary-darker;
-            }
-        }
-
-        &:disabled {
-            .icon {
-                @apply fill-disabled;
-            }
-
-            .iconStroke {
-                @apply stroke-disabled;
-            }
-        }
-
-        &.outlined {
-            @apply bg-transparent border text-primary border-primary;
-
-            &:hover {
-                @apply text-primary-dark  border-primary-dark;
-            }
-
-            &:active {
-                @apply text-primary-dark  border-primary-dark;
-            }
-
-            &:disabled {
-                @apply text-disabled  border-grey-3;
-            }
-        }
-
-        &.tonal {
-            @apply bg-info-bg text-primary;
-
-            &:hover {
-                @apply bg-info-bg-dark text-primary-dark;
-            }
-
-            &:active {
-                @apply bg-info-bg-darker text-primary-darker;
-            }
-
-            &:disabled {
-                @apply text-disabled bg-grey-3;
-            }
-        }
-
-        &.text {
-            @apply text-primary;
-
-            &:hover {
-                @apply text-primary-dark;
-            }
-
-            &:active {
-                @apply text-primary-darker;
-            }
-
-            &:disabled {
-                @apply text-disabled;
-            }
-        }
+      &:disabled {
+        @apply text-disabled bg-grey-3;
+      }
     }
 
     &.text {
-        &.text {
-            .icon {
-                @apply fill-grey-7;
-            }
+      @apply text-grey-7;
 
-            .iconStroke {
-                @apply stroke-grey-7;
-            }
-        }
+      &:hover {
+        @apply text-grey-5;
+      }
 
-        &:hover {
-            .icon {
-                @apply fill-grey-5;
-            }
+      &:active {
+        @apply text-text;
+      }
 
-            .iconStroke {
-                @apply stroke-grey-5;
-            }
-        }
-
-        &:active {
-            .icon {
-                @apply fill-text;
-            }
-
-            .iconStroke {
-                @apply stroke-text;
-            }
-        }
-
-        &:disabled {
-            .icon {
-                @apply fill-disabled;
-            }
-
-            .iconStroke {
-                @apply stroke-disabled;
-            }
-        }
-
-        &.outlined {
-            @apply bg-transparent border text-primary border-primary;
-
-            &:hover {
-                @apply text-primary-dark  border-primary-dark;
-            }
-
-            &:active {
-                @apply text-primary-dark  border-primary-dark;
-            }
-
-            &:disabled {
-                @apply text-disabled  border-grey-3;
-            }
-        }
-
-        &.tonal {
-            @apply bg-info-bg text-primary;
-
-            &:hover {
-                @apply bg-info-bg-dark text-primary-dark;
-            }
-
-            &:active {
-                @apply bg-info-bg-darker text-primary-darker;
-            }
-
-            &:disabled {
-                @apply text-disabled bg-grey-3;
-            }
-        }
-
-        &.text {
-            @apply text-grey-7;
-
-            &:hover {
-                @apply text-grey-5;
-            }
-
-            &:active {
-                @apply text-text;
-            }
-
-            &:disabled {
-                @apply text-disabled;
-            }
-        }
+      &:disabled {
+        @apply text-disabled;
+      }
     }
+  }
 }
