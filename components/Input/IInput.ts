@@ -1,4 +1,5 @@
 import React from 'react';
+import { UseFormRegister } from 'react-hook-form';
 
 export interface IInput extends React.HTMLProps<HTMLInputElement> {
     className?: string;
@@ -8,4 +9,5 @@ export interface IInput extends React.HTMLProps<HTMLInputElement> {
     hasStroke?: boolean;
     hasFill?: boolean;
     width?: string | number;
+    register?: UseFormRegister<any>;
 }

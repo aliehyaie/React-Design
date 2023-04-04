@@ -1,10 +1,34 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '../components/Button/Button';
-import Modal from '../components/Modal/Modal';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import InputHookForm from '../components/Input/InputHookForm';
+import CheckboxHookForm from '../components/Checkbox/CheckboxHookForm';
+import RadioHookForm from '../components/Radio/RadioHookForm';
+import Switch from '../components/Switch/SwitchHookForm';
+interface IFormValues {
+    name: string;
+    male: boolean;
+    north: 'yes' | 'no';
+    burger: boolean;
+    foods: Record<string, any> | null;
+}
 
 export default function Home() {
-    const [show, setShow] = useState(false);
+    const { register, handleSubmit } = useForm<IFormValues>({
+        defaultValues: {
+            male: false,
+            name: '',
+            north: 'no',
+            burger: false,
+            foods: null,
+        },
+    });
+
+    const onSubmit: SubmitHandler<IFormValues> = data => {
+        alert(JSON.stringify(data));
+    };
+
     return (
         <>
             <Head>
@@ -19,15 +43,36 @@ export default function Home() {
                 />
             </Head>
             <main className='mx-auto flex h-screen w-screen flex-col items-center justify-center'>
-                <Modal isOpen={show} onClose={() => setShow(false)}>
-                    Hello worlddddddddddddd!!!
-                </Modal>
-                <Button
-                    label='Open Modal'
-                    onClick={() => {
-                        setShow(true);
-                    }}
-                />
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <InputHookForm
+                        label='First Name'
+                        name='name'
+                        register={register}
+                        required
+                    />
+                    <CheckboxHookForm
+                        label='Male'
+                        name='male'
+                        register={register}
+                        required
+                    />
+                    <RadioHookForm
+                        label='YES'
+                        name='north'
+                        value='yes'
+                        id='y'
+                        register={register}
+                    />
+                    <RadioHookForm
+                        label='No'
+                        name='north'
+                        value='no'
+                        id='n'
+                        register={register}
+                    />
+                    <Switch name='burger' label='Burger' register={register} />
+                    <Button label='Submit' type='submit' />
+                </form>
             </main>
         </>
     );
