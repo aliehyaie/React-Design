@@ -10,8 +10,11 @@
     }
 
     .input {
-        @apply rounded-xl outline-0 w-full text-text border transition-all duration-200 border-grey-6 px-3 py-3
-      text-sm;
+        @apply rounded-xl outline-0 w-full text-text border transition-all duration-200 border-grey-6 px-3 py-3 text-sm;
+
+      &::placeholder {
+        @apply text-grey-8;
+      }
 
         &.hasIconRight {
             @apply pr-8;
