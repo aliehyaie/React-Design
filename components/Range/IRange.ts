@@ -3,11 +3,13 @@ import React from 'react';
 export interface ISingleRange {
     isSingle: true;
     value?: number;
+    onChange: (value: number) => void;
 }
 
 export interface IMultiRange {
     isSingle: false;
     value?: [number, number];
+    onChange: (values: [number, number]) => void;
 }
 
 export type IRange = {
@@ -16,5 +18,5 @@ export type IRange = {
     max?: number;
     showIndicators?: boolean;
     step?: number;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-} & (ISingleRange | IMultiRange);
+} & Omit<React.HTMLProps<HTMLInputElement>, 'value' | 'onChange'> &
+    (ISingleRange | IMultiRange);

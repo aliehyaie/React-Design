@@ -1,27 +1,39 @@
 import Head from 'next/head';
 import React from 'react';
 import Button from '../components/Button/Button';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import InputHookForm from '../components/Input/InputHookForm';
-import CheckboxHookForm from '../components/Checkbox/CheckboxHookForm';
-import RadioHookForm from '../components/Radio/RadioHookForm';
-import Switch from '../components/Switch/SwitchHookForm';
+import { SubmitHandler, useForm, Controller } from 'react-hook-form';
+import Switch from '../components/Switch/Switch';
+import Range from '../components/Range/Range';
+import Radio from '../components/Radio/Radio';
+import Checkbox from '../components/Checkbox/Checkbox';
+import Input from '../components/Input/Input';
+import Select from '../components/Select/Select';
+
 interface IFormValues {
     name: string;
     male: boolean;
     north: 'yes' | 'no';
     burger: boolean;
     foods: Record<string, any> | null;
+    age: [0, 1000];
+    price: number;
 }
 
 export default function Home() {
-    const { register, handleSubmit } = useForm<IFormValues>({
+    const {
+        handleSubmit,
+        watch,
+        control,
+        formState: { defaultValues },
+    } = useForm<IFormValues>({
         defaultValues: {
             male: false,
             name: '',
             north: 'no',
             burger: false,
             foods: null,
+            age: [0, 1000],
+            price: 0,
         },
     });
 
@@ -44,33 +56,113 @@ export default function Home() {
             </Head>
             <main className='mx-auto flex h-screen w-screen flex-col items-center justify-center'>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <InputHookForm
-                        label='First Name'
+                    <Controller
+                        control={control}
                         name='name'
-                        register={register}
-                        required
+                        render={({ field: { onChange } }) => (
+                            <Input label='First Name' onChange={onChange} />
+                        )}
                     />
-                    <CheckboxHookForm
-                        label='Male'
+
+                    <Controller
+                        control={control}
+                        name='name'
+                        render={({ field: { onChange } }) => (
+                            <Select
+                                instanceId='food'
+                                placeholder='please chooce a food'
+                                options={[
+                                    {
+                                        label: 'Pizza',
+                                        value: 0,
+                                    },
+                                    {
+                                        label: 'Burger',
+                                        value: 1,
+                                    },
+                                    {
+                                        label: 'Pasta',
+                                        value: 2,
+                                    },
+                                ]}
+                                onChange={onChange}
+                            />
+                        )}
+                    />
+
+                    <Controller
+                        control={control}
                         name='male'
-                        register={register}
-                        required
+                        render={({ field: { onChange } }) => (
+                            <Checkbox label='Male' onChange={onChange} />
+                        )}
                     />
-                    <RadioHookForm
-                        label='YES'
+
+                    <Controller
+                        control={control}
                         name='north'
-                        value='yes'
-                        id='y'
-                        register={register}
+                        render={({ field: { onChange } }) => (
+                            <Radio
+                                checked={watch('north') === 'no'}
+                                label='No'
+                                value='no'
+                                id='n'
+                                onChange={onChange}
+                            />
+                        )}
                     />
-                    <RadioHookForm
-                        label='No'
+
+                    <Controller
+                        control={control}
                         name='north'
-                        value='no'
-                        id='n'
-                        register={register}
+                        render={({ field: { onChange } }) => (
+                            <Radio
+                                checked={watch('north') === 'yes'}
+                                label='Yes'
+                                value='yes'
+                                id='y'
+                                onChange={onChange}
+                            />
+                        )}
                     />
-                    <Switch name='burger' label='Burger' register={register} />
+
+                    <Controller
+                        control={control}
+                        name='burger'
+                        rules={{
+                            required: 'REQ',
+                        }}
+                        render={({ field: { onChange } }) => (
+                            <Switch label='Burger' onChange={onChange} />
+                        )}
+                    />
+                    <Controller
+                        control={control}
+                        name='price'
+                        render={({ field: { onChange } }) => (
+                            <Range
+                                isSingle={true}
+                                value={defaultValues?.price}
+                                onChange={onChange}
+                            />
+                        )}
+                    />
+                    <div>Whuuuuuuuuuuu</div>
+                    <Controller
+                        control={control}
+                        name='age'
+                        render={({ field: { onChange } }) => (
+                            <Range
+                                isSingle={false}
+                                value={[
+                                    defaultValues?.age?.[0] || 0,
+                                    defaultValues?.age?.[1] || 0,
+                                ]}
+                                step={1}
+                                onChange={onChange}
+                            />
+                        )}
+                    />
                     <Button label='Submit' type='submit' />
                 </form>
             </main>
