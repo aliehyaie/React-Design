@@ -1,5 +1,5 @@
 .label {
-    @apply text-grey-4 w-max text-xs;
+    @apply text-grey-4 w-full text-xs;
 
     &:focus-within {
         @apply text-text;
@@ -10,7 +10,7 @@
     }
 
     .input {
-        @apply rounded-xl outline-0 w-[280px] text-text border transition-all duration-200 border-grey-6 px-3 py-3
+        @apply rounded-xl outline-0 w-full text-text border transition-all duration-200 border-grey-6 px-3 py-3
       text-sm;
 
         &.hasIconRight {

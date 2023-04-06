@@ -10,6 +10,7 @@ const Range: React.FC<IRange> = ({
     step,
     priceGap,
     showIndicators,
+    onChange,
 }) => {
     const minRangeValueRef = useRef() as MutableRefObject<HTMLInputElement>;
     const maxRangeValueRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -56,8 +57,10 @@ const Range: React.FC<IRange> = ({
                     maxVal = +maxRangeValueRef.current.value;
                 }
             }
+            onChange([minVal, maxVal]);
             calculateProgress(minVal, maxVal);
         } else {
+            onChange(minVal);
             calculateProgress(minVal);
         }
     };
