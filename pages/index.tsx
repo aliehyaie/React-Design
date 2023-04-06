@@ -60,7 +60,11 @@ export default function Home() {
                         control={control}
                         name='name'
                         render={({ field: { onChange } }) => (
-                            <Input label='First Name' onChange={onChange} />
+                            <Input
+                                placeholder='First Name'
+                                label='First Name'
+                                onChange={onChange}
+                            />
                         )}
                     />
 
@@ -70,6 +74,7 @@ export default function Home() {
                         render={({ field: { onChange } }) => (
                             <Select
                                 instanceId='food'
+                                label='Foods'
                                 placeholder='please chooce a food'
                                 options={[
                                     {
