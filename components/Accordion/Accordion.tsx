@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classes from './Accordion.module.scss';
 import { IAccordion, IAccordionItem } from './IAccordion';
 import Text from '../Text/Text';
+import Icon from '../Icon/Icon';
 
 const AccordionItem: React.FC<IAccordionItem> = ({
     accordionItem,
@@ -11,7 +12,6 @@ const AccordionItem: React.FC<IAccordionItem> = ({
     itemClassName,
 }) => {
     const [isVisible, setIsVisible] = useState(isActive);
-
     useEffect(() => {
         setIsVisible(isActive);
     }, [isActive]);
@@ -32,7 +32,12 @@ const AccordionItem: React.FC<IAccordionItem> = ({
                 }
             >
                 <Text variant='h2'>{accordionItem.title}</Text>
-                <Text variant='span'>{isVisible ? '-' : '+'}</Text>
+                <Icon
+                    className={`text-lg ${classes.icon} ${
+                        isVisible ? classes.show : ''
+                    }`}
+                    iconName='icon-arrow-ios-downward'
+                />
             </div>
             <Text
                 variant='p'

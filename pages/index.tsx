@@ -8,6 +8,7 @@ import Radio from '../components/Radio/Radio';
 import Checkbox from '../components/Checkbox/Checkbox';
 import Input from '../components/Input/Input';
 import Select from '../components/Select/Select';
+import { Accordion } from '../components/Accordion/Accordion';
 
 interface IFormValues {
     name: string;
@@ -55,7 +56,17 @@ export default function Home() {
                 />
             </Head>
             <main className='mx-auto flex h-screen w-screen flex-col items-center justify-center'>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <Accordion
+                    className='mx-auto w-[400px]'
+                    accordionItems={[
+                        {
+                            title: 'Title',
+                            content: 'This is the first accordtion',
+                            id: 'Ac1',
+                        },
+                    ]}
+                />
+                <form className='w-[500px]' onSubmit={handleSubmit(onSubmit)}>
                     <Controller
                         control={control}
                         name='name'
@@ -146,6 +157,7 @@ export default function Home() {
                         name='price'
                         render={({ field: { onChange } }) => (
                             <Range
+                                showIndicators
                                 isSingle={true}
                                 value={defaultValues?.price}
                                 onChange={onChange}
@@ -153,6 +165,7 @@ export default function Home() {
                         )}
                     />
                     <div>Whuuuuuuuuuuu</div>
+                    {/*
                     <Controller
                         control={control}
                         name='age'
@@ -168,6 +181,7 @@ export default function Home() {
                             />
                         )}
                     />
+*/}
                     <Button label='Submit' type='submit' />
                 </form>
             </main>
