@@ -60,15 +60,71 @@ const Range: React.FC<IRange> = ({
             onChange([minVal, maxVal]);
             calculateProgress(minVal, maxVal);
         } else {
+            /*
+            const rangeInput = e.target;
+            const thumbWidth = 16;
+            const off =
+                (rangeInput.clientWidth - thumbWidth) /
+                (parseInt(rangeInput.max) - parseInt(rangeInput.min));
+            const px =
+                (rangeInput.valueAsNumber - parseInt(rangeInput.min)) * off -
+                rangeInput.clientWidth / 2 +
+                thumbWidth / 2;
+*/
             onChange(minVal);
             calculateProgress(minVal);
         }
     };
+    /*
+    const [separators, setSeperators] = useState<number[]>([]);
+    useEffect(() => {
+        /!* const thumbWidth = 16;
+         const rangeInput = minRangeValueRef.current;
+
+         const off =
+             (rangeInput.clientWidth - thumbWidth) /
+             (max! - min!);
+         let px: number[] = [];
+         for (let i = 0; i <= max!; i += step!) {
+              px.push(
+                 ((i - min!) * off ) -
+                 (rangeInput.clientWidth / 2) +
+                 (thumbWidth / 2));
+
+         }*!/
+        const segments = Math.floor(max! / step!);
+        const distances = minRangeValueRef.current.clientWidth / segments;
+        let px: number[] = [];
+        for (let i = 0; i <= segments; i++) {
+            if (i === segments) {
+                px.push(i * distances - 1);
+            } else {
+                px.push(i * distances);
+            }
+        }
+        setSeperators(px);
+    }, []);
+*/
 
     return (
         <div className='ltr'>
             <div className={classes.slider}>
-                {showIndicators ? <></> : null}
+                {showIndicators ? (
+                    <>
+                        {/*  {separators.map(separator => (
+                            <div
+                                key={separator}
+                                style={{
+                                    position:'absolute',
+                                    left: separator + 'px',
+                                    width: '1px',
+                                    height: '10px',
+                                    backgroundColor: 'coral',
+                                }}
+                            >df</div>
+                        ))}*/}
+                    </>
+                ) : null}
                 <div ref={progressRef} className={classes.progress} />
             </div>
             <div className={classes.rangeInput}>

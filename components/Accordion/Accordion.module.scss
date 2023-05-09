@@ -1,19 +1,28 @@
 .accordion {
-    @apply w-full flex flex-col gap-4;
+  @apply w-full flex flex-col gap-4;
 }
 
 .item {
-    @apply rounded-lg border border-primary px-2.5 py-2.5;
+  @apply rounded-lg border border-primary px-2.5 py-2.5;
 }
 
 .title {
-    @apply flex justify-between items-center cursor-pointer;
+  @apply flex justify-between items-center cursor-pointer;
+}
+
+.icon{
+  @apply transition-all duration-300 rotate-0 text-primary;
+}
+
+.icon.show {
+  @apply rotate-180;
 }
 
 .content {
-    @apply max-h-0 overflow-hidden transition-[max-height] ease-in-out duration-500;
+  @apply overflow-hidden max-h-0 transition-all duration-500;
+  transition-timing-function: cubic-bezier(0, 1, 0, 1);
 }
 
 .content.show {
-    @apply max-h-screen;
+  @apply max-h-screen duration-[1500ms] ease-in-out;
 }

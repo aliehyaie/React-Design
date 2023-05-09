@@ -1,5 +1,5 @@
 .slider {
-    @apply h-1 rounded bg-grey-6 relative w-[300px] overflow-hidden;
+    @apply h-1 rounded bg-grey-6 relative w-full overflow-hidden;
 
     .progress {
         @apply h-1 bg-success rounded absolute /*inset-x-1/4*/;
