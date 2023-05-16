@@ -1,5 +1,5 @@
 .label {
-    @apply text-grey-4 w-full text-xs;
+    @apply text-grey-4 w-full text-xs gap-2 flex flex-col;
 
     &:focus-within {
         @apply text-text;

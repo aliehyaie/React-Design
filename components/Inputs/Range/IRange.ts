@@ -1,4 +1,4 @@
-import React from 'react';
+import { IInputs } from '../IInputs';
 
 export interface ISingleRange {
     isSingle: true;
@@ -18,5 +18,5 @@ export type IRange = {
     max?: number;
     showIndicators?: boolean;
     step?: number;
-} & Omit<React.HTMLProps<HTMLInputElement>, 'value' | 'onChange'> &
+} & Omit<IInputs, 'value' | 'onChange'> &
     (ISingleRange | IMultiRange);
