@@ -1,16 +1,20 @@
 import React from 'react';
 import { IInput } from './IInput';
-import Icon from '../Icon/Icon';
+import Icon from '../../Icon/Icon';
 import classes from './Input.module.scss';
 import { twMerge } from 'tailwind-merge';
-import Text from '../Text/Text';
+import Label from '../Label/Label';
+import Error from '../Error/Error';
 
 const Input: React.FC<IInput> = ({
+    label,
     iconRightName,
     iconLeftName,
-    width,
     className,
     labelClassName,
+    error,
+    errorMessage,
+    required,
     ...props
 }) => {
     return (
@@ -21,9 +25,12 @@ const Input: React.FC<IInput> = ({
                     ${props.disabled ? classes.disabled : ''}
                 `}
             >
-                <Text className={twMerge('inline-block mb-2', labelClassName)}>
-                    {props.label || ''}
-                </Text>
+                <Label
+                    label={label}
+                    error={error}
+                    required={required}
+                    labelClassName={labelClassName}
+                />
                 <div className='relative'>
                     {iconRightName && (
                         <Icon
@@ -32,11 +39,12 @@ const Input: React.FC<IInput> = ({
                         />
                     )}
                     <input
+                        {...props}
+                        required={false}
                         className={`${classes.input}
+                            ${error ? 'border-error' : ''}
                             ${iconRightName ? classes.hasIconRight : ''}
                             `}
-                        width={width}
-                        {...props}
                     />
                     {iconLeftName && (
                         <Icon
@@ -46,6 +54,7 @@ const Input: React.FC<IInput> = ({
                     )}
                 </div>
             </label>
+            {error && errorMessage && <Error errorMessage={errorMessage} />}
         </div>
     );
 };

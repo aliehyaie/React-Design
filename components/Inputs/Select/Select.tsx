@@ -1,25 +1,28 @@
 import SelectBox from 'react-select';
-import { GroupBase } from 'react-select';
-import { Props } from 'react-select/base';
-import { twMerge } from 'tailwind-merge';
 import React from 'react';
 import { ISelect } from './ISelect';
-import Text from '../Text/Text';
+import Label from '../Label/Label';
+import Error from '../Error/Error';
 
-const Select = <
-    Option,
-    IsMulti extends boolean = false,
-    Group extends GroupBase<Option> = GroupBase<Option>
->(
-    props: Partial<Props<Option, IsMulti, Group>> & ISelect
-) => {
+const Select = ({
+    label,
+    error,
+    errorMessage,
+    required,
+    className,
+    labelClassName,
+    ...props
+}: ISelect) => {
     return (
-        <>
-            <Text
-                className={twMerge('inline-block mb-2', props.labelClassName)}
-            >
-                {props.label || ''}
-            </Text>
+        <div className={`flex flex-col gap-2 ${className}`}>
+            {label && (
+                <Label
+                    label={label}
+                    error={error}
+                    required={required}
+                    labelClassName={labelClassName}
+                />
+            )}
             <SelectBox
                 {...props}
                 options={props.options}
@@ -33,7 +36,7 @@ const Select = <
                         },
                         width: '100%',
                         transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                        borderColor: '#F2F3F5',
+                        borderColor: error ? '#DC362E' : '#F2F3F5',
                         boxShadow: 'none',
                         fontSize: '0.875rem',
                         borderRadius: '0.75rem',
@@ -57,7 +60,8 @@ const Select = <
                     ...props.styles,
                 }}
             />
-        </>
+            {error && errorMessage && <Error errorMessage={errorMessage} />}
+        </div>
     );
 };
 

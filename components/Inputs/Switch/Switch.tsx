@@ -1,27 +1,26 @@
 import React from 'react';
 import classes from './Switch.module.scss';
 import { ISwitch } from './ISwitch';
-import Text from '../Text/Text';
 import { twMerge } from 'tailwind-merge';
-import Icon from '../Icon/Icon';
+import Icon from '../../Icon/Icon';
+import Label from '../Label/Label';
 
 const Switch: React.FC<ISwitch> = ({
+    label,
+    error,
     rounded,
     className,
     labelClassName,
     ...props
 }) => {
-    /* const [field] = useField({ ...(props as FieldHookConfig<any>) });
-     */
     return (
-        <div className={className}>
-            {props.label && (
-                <Text
-                    variant='span'
-                    className={twMerge('block' + labelClassName)}
-                >
-                    {props.label}
-                </Text>
+        <div className={twMerge('flex items-center gap-2', className)}>
+            {label && (
+                <Label
+                    label={label}
+                    error={error}
+                    labelClassName={`self-center ${labelClassName}`}
+                />
             )}
             <label className={`${classes.switch}`}>
                 <input
