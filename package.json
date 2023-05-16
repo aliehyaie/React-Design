@@ -8,7 +8,8 @@
         "start": "next start",
         "lint": "next lint",
         "prepare": "husky install",
-        "fix": "tsc --noEmit && yarn eslint --fix . && yarn prettier --write ."
+        "fix": "tsc --noEmit && yarn eslint --fix . && yarn prettier --write .",
+        "delete-local-branch": "git branch --merged | egrep -v \"(^\\*|master|main|dev)\" | xargs git branch -d"
     },
     "dependencies": {
         "@next/font": "13.1.6",

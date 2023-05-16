@@ -11,6 +11,7 @@ const Range: React.FC<IRange> = ({
     priceGap,
     showIndicators,
     onChange,
+    className,
 }) => {
     const minRangeValueRef = useRef() as MutableRefObject<HTMLInputElement>;
     const maxRangeValueRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -107,7 +108,7 @@ const Range: React.FC<IRange> = ({
 */
 
     return (
-        <div className='ltr'>
+        <div className={`ltr ${className}`}>
             <div className={classes.slider}>
                 {showIndicators ? (
                     <>
