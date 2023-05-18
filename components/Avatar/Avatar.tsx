@@ -17,7 +17,7 @@ const Avatar: React.FC<IAvatar> = ({
     return (
         <div
             className={`${twMerge(
-                'relative flex h-12 w-12 items-center justify-center overflow-hidden bg-grey-2 text-white',
+                'relative flex h-16 w-16 items-center justify-center overflow-hidden bg-grey-2 text-white',
                 className
             )} ${variant === 'circle' ? 'rounded-full' : 'rounded-sm'}`}
         >
