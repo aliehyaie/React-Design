@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import React from 'react';
-import { Accordion } from '../components/Accordion/Accordion';
 
 export default function Home() {
     return (
@@ -16,18 +15,7 @@ export default function Home() {
                     content='width=device-width, initial-scale=1'
                 />
             </Head>
-            <main className='mx-auto flex h-screen w-screen flex-col items-center justify-center'>
-                <Accordion
-                    className='mx-auto w-[400px]'
-                    accordionItems={[
-                        {
-                            title: 'Title',
-                            content: 'This is the first accordtion',
-                            id: 'Ac1',
-                        },
-                    ]}
-                />
-            </main>
+            <main className='mx-auto flex h-screen w-screen flex-col items-center justify-center'></main>
         </>
     );
 }
