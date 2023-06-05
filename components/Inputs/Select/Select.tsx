@@ -28,36 +28,20 @@ const Select = ({
                 options={props.options}
                 placeholder={props.placeholder || ''}
                 theme={theme => ({ ...theme })}
-                styles={{
-                    control: defaultStyles => ({
-                        ...defaultStyles,
-                        '&:hover': {
-                            borderColor: '#677887',
-                        },
-                        width: '100%',
-                        transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                        borderColor: error ? '#DC362E' : '#F2F3F5',
-                        boxShadow: 'none',
-                        fontSize: '0.875rem',
-                        borderRadius: '0.75rem',
-                        padding: '0.25rem',
-                    }),
-                    option: (defaultStyles, state) => ({
-                        ...defaultStyles,
-                        '&:hover': {
-                            backgroundColor: '#F2F3F5',
-                        },
-                        transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                        backgroundColor: state.isSelected ? 'transparent' : '',
-                        color: '#041320',
-                        fontSize: '0.875rem',
-                    }),
-                    placeholder: defaultStyles => ({
-                        ...defaultStyles,
-                        color: '#9BA9B3',
-                    }),
-                    indicatorSeparator: () => ({ display: 'none' }),
-                    ...props.styles,
+                classNames={{
+                    control: state => `shadow-none text-sm rounded-xl p-1
+                    w-full transition-all duration-200 hover:border-grey-7
+                    ${state.isFocused && !error ? '!border-text' : ''}
+                     ${error ? 'border-error' : 'border-grey-6'}`,
+                    option: state => {
+                        return `
+                         text-text text-sm
+                        ${state.isSelected ? 'bg-transparent' : ''}
+                         hover:bg-grey-6 transition-all duration-200`;
+                    },
+                    placeholder: defaultStyles =>
+                        `${defaultStyles} text-grey-8`,
+                    indicatorSeparator: () => 'hidden',
                 }}
             />
             {error && errorMessage && <Error errorMessage={errorMessage} />}
