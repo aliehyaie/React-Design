@@ -1,39 +1,39 @@
 .label {
-    @apply text-grey-4 w-full text-xs gap-2 flex flex-col;
+  @apply text-grey-4 w-full text-xs gap-2 flex flex-col;
 
-    &:focus-within {
-        @apply text-text;
+  &:focus-within {
+    @apply text-text;
+  }
+
+  &.readOnly {
+    @apply text-grey-4;
+  }
+
+  .input {
+    @apply rounded-xl outline-0 w-full text-text border transition-all duration-200 border-grey-6 px-3 py-3 text-sm;
+
+    &::placeholder {
+      @apply text-grey-8;
     }
 
-    &.readOnly {
-        @apply text-grey-4;
+    &.hasIconRight {
+      @apply pr-8;
     }
 
-    .input {
-        @apply rounded-xl outline-0 w-full text-text border transition-all duration-200 border-grey-6 px-3 py-3 text-sm;
-
-      &::placeholder {
-        @apply text-grey-8;
-      }
-
-        &.hasIconRight {
-            @apply pr-8;
-        }
-
-        &:focus {
-            @apply border-text;
-        }
-
-        &:hover {
-            @apply border-grey-7;
-        }
-
-        &:read-only {
-            @apply bg-grey-6 border-grey-6 cursor-auto;
-        }
-
-        &:disabled {
-            @apply border-disabled bg-white;
-        }
+    &:hover {
+      @apply border-grey-7;
     }
+
+    &:focus {
+      @apply border-text;
+    }
+
+    &:read-only {
+      @apply bg-grey-6 border-grey-6 cursor-auto;
+    }
+
+    &:disabled {
+      @apply border-disabled bg-white;
+    }
+  }
 }
