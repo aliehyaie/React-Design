@@ -30,15 +30,15 @@
       you to display content in an organized and space-efficient manner. With the Accordion component, you can create
       nested accordions and customize their appearance using CSS classes.
       #### props
-     
-    | Prop            | Type                              | Default | Optional | Description                                                                 |
-      | --------------- | --------------------------------- | ------- |----------| --------------------------------------------------------------------------- |
-      | `accordionItems`| array of objects                  |         | No       | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) property. |
-      | `isMultiple`    | boolean                           | `false` | Yes      | Determines whether multiple accordion items can be open simultaneously.       |
-      | `className`     | string                            |         | Yes      | Adds custom CSS classes to the Accordion component.                          |
-      | `itemClassName` | string                            |         | Yes      | Adds custom CSS classes to individual accordion items.                       |
 
-     #### Example Usage
+| Prop            | Type                              | Default | Optional | Description                                                                 |
+| --------------- | --------------------------------- | ------- | -------- | --------------------------------------------------------------------------- |
+| `accordionItems`| array of objects                  |         | ✗         | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) property. |
+| `isMultiple`    | boolean                           | `false` | √      | Determines whether multiple accordion items can be open simultaneously.       |
+| `className`     | string                            |         | √      | Adds custom CSS classes to the Accordion component.                          |
+| `itemClassName` | string                            |         | √      | Adds custom CSS classes to individual accordion items.                       |
+
+#### Example Usage
    <details>
   <summary>Click to see example</summary>
 
@@ -81,4 +81,5 @@
           itemClassName="custom-accordion-item"
         />
       );
+```
 </details>
