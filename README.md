@@ -29,14 +29,13 @@
       The Accordion component is a versatile and customizable UI element for creating collapsible sections. It allows
       you to display content in an organized and space-efficient manner. With the Accordion component, you can create
       nested accordions and customize their appearance using CSS classes.
-      #### props
 
-| Prop            | Type                              | Default | Optional | Description                                                                 |
-| --------------- | --------------------------------- | ------- | -------- | --------------------------------------------------------------------------- |
-| `accordionItems`| array of objects                  |         | ✗         | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) property. |
-| `isMultiple`    | boolean                           | `false` | √      | Determines whether multiple accordion items can be open simultaneously.       |
-| `className`     | string                            |         | √      | Adds custom CSS classes to the Accordion component.                          |
-| `itemClassName` | string                            |         | √      | Adds custom CSS classes to individual accordion items.                       |
+| Prop            | Type                              | Default | Optional | Description                                                                                                                                                                                                                                                    |
+| --------------- | --------------------------------- | ------- | -------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `accordionItems`| array of objects                  |         | ✗         | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) that is An array of AccordionItem objects to create nested accordions inside the current accordion item. |
+| `isMultiple`    | boolean                           | `false` | √      | Determines whether multiple accordion items can be open simultaneously.                                                                                                                                                                                        |
+| `className`     | string                            |         | √      | Adds custom CSS classes to the Accordion component.                                                                                                                                                                                                            |
+| `itemClassName` | string                            |         | √      | Adds custom CSS classes to individual accordion items.                                                                                                                                                                                                         |
 
 #### Example Usage
    <details>
