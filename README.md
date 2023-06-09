@@ -32,7 +32,7 @@
       nested accordions and customize their appearance using Tailwind classes.
 
       | Prop            | Type                              | Default | Optional | Description                                                                                                                                                                                                                                                    |
-      | --------------- | --------------------------------- | ------- | -------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+          | --------------- | --------------------------------- | ------- | -------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
       | `accordionItems`| array of objects                  |         | ✗        | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) that is an array of AccordionItem objects to create nested accordions inside the current accordion item. |
       | `isMultiple`    | boolean                           | `false` | √        | Determines whether multiple accordion items can be open simultaneously.                                                                                                                                                                                        |
       | `className`     | string                            |         | √        | Adds custom CSS classes to the Accordion component.                                                                                                                                                                                                            |
@@ -92,12 +92,12 @@
       displaying different types of text, such as headings (h1-h6), paragraphs, or spans. You can also apply custom styles
       using Tailwind classes.
 
-      | Prop| Type| Default | Optional | Description|
-          |-----|-------------------------------------------|---------|------------|-------------------------------------------------------------------------------------------------|
-      | `color` | `primary` <br> `text` | `text`| √        | The color of the text.|
-      | `variant` | `h1` <br> `h2` <br> `h3` <br> `h4` <br> `h5` <br> `h6` <br> `p` <br> `span` | `p`  | √        | The type of text variant to be rendered.|
-      | `className` | string |      | √        | Adds custom CSS classes to the Text component.|
-      | `children` | ReactNode |      | ✗        | The content to be displayed within the Text component.|
+      | Prop        | Type                                        | Default | Optional | Description                                                                                     |
+          |-------------|-------------------------------------------|---------|----------|-------------------------------------------------------------------------------------------------|
+      | `color`     | `primary` <br> `text`                       | `text`| √        | The color of the text.                                                                         |
+      | `variant`   | `h1` <br> `h2` <br> `h3` <br> `h4` <br> `h5` <br> `h6` <br> `p` <br> `span` | `p`  | √        | The type of text variant to be rendered.                                                        |
+      | `className` | string                                      |      | √        | Adds custom CSS classes to the Text component.                                                  |
+      | `children`  | ReactNode                                   |      | ✗        | The content to be displayed within the Text component.                                          |
 
       #### Example Usage
 
