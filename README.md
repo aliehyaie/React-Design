@@ -21,96 +21,96 @@
 
 ***
 
-- **components**: The "components" folder serves as the central location for all the reusable UI components in this
-  project. It follows a modular approach, where each component is contained within its own folder and has a dedicated
-  file for its implementation. Here's a brief overview of some of the key components you'll find in this folder:
+- - **components**: The "components" folder serves as the central location for all the reusable UI components in this
+    project. It follows a modular approach, where each component is contained within its own folder and has a dedicated
+    file for its implementation. Here's a brief overview of some of the key components you'll find in this folder:
 
-    - ### Accordion Component
+- ### Accordion Component
 
-      The Accordion component is a versatile and customizable UI element for creating collapsible sections. It allows
-      you to display content in an organized and space-efficient manner. With the Accordion component, you can create
-      nested accordions and customize their appearance using Tailwind classes.
+  The Accordion component is a versatile and customizable UI element for creating collapsible sections. It allows
+  you to display content in an organized and space-efficient manner. With the Accordion component, you can create
+  nested accordions and customize their appearance using Tailwind classes.
 
-      | Prop            | Type                              | Default | Optional | Description                                                                                                                                                                                                                                                    |
+  | Prop            | Type                              | Default | Optional | Description                                                                                                                                                                                                                                                    |
       | --------------- | --------------------------------- | ------- | -------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-      | `accordionItems`| array of objects                  |         | ✗        | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) that is an array of AccordionItem objects to create nested accordions inside the current accordion item. |
-      | `isMultiple`    | boolean                           | `false` | √        | Determines whether multiple accordion items can be open simultaneously.                                                                                                                                                                                        |
-      | `className`     | string                            |         | √        | Adds custom CSS classes to the Accordion component.                                                                                                                                                                                                            |
-      | `itemClassName` | string                            |         | √        | Adds custom CSS classes to individual accordion items.                                                                                                                                                                                                         |
+  | `accordionItems`| array of objects                  |         | ✗        | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) that is an array of AccordionItem objects to create nested accordions inside the current accordion item. |
+  | `isMultiple`    | boolean                           | `false` | √        | Determines whether multiple accordion items can be open simultaneously.                                                                                                                                                                                        |
+  | `className`     | string                            |         | √        | Adds custom CSS classes to the Accordion component.                                                                                                                                                                                                            |
+  | `itemClassName` | string                            |         | √        | Adds custom CSS classes to individual accordion items.                                                                                                                                                                                                         |
 
-      #### Example Usage
+  #### Example Usage
 
-      <details>
-      <summary>Click to see example</summary>
+  <details>
+  <summary>Click to see example</summary>
 
-      ```jsx
-      const accordionItems = [
+  ```jsx
+  const accordionItems = [
+    {
+      id: 1,
+      title: 'Accordion Item 1',
+      content: 'Content for Accordion Item 1',
+    },
+    {
+      id: 2,
+      title: 'Accordion Item 2',
+      content: 'Content for Accordion Item 2',
+    },
+    {
+      id: 3,
+      title: 'Accordion Item 3',
+      content: 'Content for Accordion Item 3',
+      children: [
         {
-          id: 1,
-          title: 'Accordion Item 1',
-          content: 'Content for Accordion Item 1',
+          id: 4,
+          title: 'Nested Accordion Item 1',
+          content: 'Content for Nested Accordion Item 1',
         },
         {
-          id: 2,
-          title: 'Accordion Item 2',
-          content: 'Content for Accordion Item 2',
+          id: 5,
+          title: 'Nested Accordion Item 2',
+          content: 'Content for Nested Accordion Item 2',
         },
-        {
-          id: 3,
-          title: 'Accordion Item 3',
-          content: 'Content for Accordion Item 3',
-          children: [
-            {
-              id: 4,
-              title: 'Nested Accordion Item 1',
-              content: 'Content for Nested Accordion Item 1',
-            },
-            {
-              id: 5,
-              title: 'Nested Accordion Item 2',
-              content: 'Content for Nested Accordion Item 2',
-            },
-          ],
-        },
-      ];
-  
-      return (
-        <Accordion
-          accordionItems={accordionItems}
-          isMultiple={false}
-          className="custom-accordion"
-          itemClassName="custom-accordion-item"
-        />
-      );
-      ```
+      ],
+    },
+  ];
 
-      </details>
+  return (
+    <Accordion
+      accordionItems={accordionItems}
+      isMultiple={false}
+      className="custom-accordion"
+      itemClassName="custom-accordion-item"
+    />
+  );
+  ```
 
-    - ### Text Component
+  </details>
 
-      The Text component allows you to render styled text with customizable color and typography. It provides flexibility in
-      displaying different types of text, such as headings (h1-h6), paragraphs, or spans. You can also apply custom styles
-      using Tailwind classes.
+- ### Text Component
 
-      | Prop            | Type                              | Default | Optional | Description                                                                                                                                                                                                                                                    |
-            | --------------- | --------------------------------- | ------- | -------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-      | `accordionItems`| array of objects                  |         | ✗        | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) that is an array of AccordionItem objects to create nested accordions inside the current accordion item. |
-      | `isMultiple`    | boolean                           | `false` | √        | Determines whether multiple accordion items can be open simultaneously.                                                                                                                                                                                        |
-      | `className`     | string                            |         | √        | Adds custom CSS classes to the Accordion component.                                                                                                                                                                                                            |
-      | `itemClassName` | string                            |         | √        | Adds custom CSS classes to individual accordion items.                                                                                                                                                                                                         |
+  The Text component allows you to render styled text with customizable color and typography. It provides flexibility in
+  displaying different types of text, such as headings (h1-h6), paragraphs, or spans. You can also apply custom styles
+  using Tailwind classes.
 
-      #### Example Usage
+  | Prop        | Type                                          | Default | Optional | Description                                                                                     |
+      |-------------|-----------------------------------------------|---------|----------|-------------------------------------------------------------------------------------------------|
+  | `color`     | `'primary'` <br> `'text'`                       | `'text'`| √        | The color of the text.                                                                         |
+  | `variant`   | `'h1'` <br> `'h2'` <br> `'h3'` <br> `'h4'` <br> `'h5'` <br> `'h6'` <br> `'p'` <br> `'span'` | `'p'`    | √        | The type of text variant to be rendered.                                                        |
+  | `className` | string                                        |         | √        | Adds custom CSS classes to the Text component.                                                  |
+  | `children`  | ReactNode                                     |         | ✗        | The content to be displayed within the Text component.                                          |
 
-      <details>
-      <summary>Click to see example</summary>
+  #### Example Usage
 
-      ```jsx
-      return (
-        <div>
-          <Text variant="h1" color="primary">Heading 1</Text>
-          <Text variant="h3" color="text">Heading 3</Text>
-        </div>
-      );
-      ```
+  <details>
+  <summary>Click to see example</summary>
 
-      </details>
+  ```jsx
+  return (
+    <div>
+      <Text variant="h1" color="primary">Heading 1</Text>
+      <Text variant="h3" color="text">Heading 3</Text>
+    </div>
+  );
+  ```
+
+  </details>
