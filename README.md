@@ -30,26 +30,20 @@
       you to display content in an organized and space-efficient manner. With the Accordion component, you can create
       nested accordions and customize their appearance using CSS classes.
       #### props
-      - `accordionItems` (required): A list of accordion items to be rendered within the Accordion component. Each item
-        should be an object with the following structure:
-          - `id`: (string | number) A unique identifier for the accordion item.
-          - `title`:  (string | React.ReactElement) The title or heading for the accordion item.
-          - `content`: (string | React.ReactElement) The content to be displayed when the accordion item is expanded.
-          - `children` (optional): An array of AccordionItem objects to create nested accordions inside the current
-            accordion item.
-      - `isMultiple` (optional, default: false): A boolean prop that determines whether multiple accordion items can be
-        open simultaneously. If set to `true`, multiple items can be expanded at the same time. If set to `false`,
-        expanding
-        one item will automatically collapse any other open items.
-      - `className`  (optional): A string prop that allows you to add custom CSS classes to the Accordion component,
-        enabling you to style it according to your needs.
-      - `itemClassName` (optional): A string prop that allows you to add custom CSS classes to individual accordion items,
-        giving you the flexibility to style them differently based on specific requirements.
+     
+    | Prop            | Type                              | Default | Optional | Description                                                                 |
+      | --------------- | --------------------------------- | ------- |----------| --------------------------------------------------------------------------- |
+      | `accordionItems`| array of objects                  |         | No       | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) property. |
+      | `isMultiple`    | boolean                           | `false` | Yes      | Determines whether multiple accordion items can be open simultaneously.       |
+      | `className`     | string                            |         | Yes      | Adds custom CSS classes to the Accordion component.                          |
+      | `itemClassName` | string                            |         | Yes      | Adds custom CSS classes to individual accordion items.                       |
 
-      #### Example Usage
-      Here's an example of how you can use the Accordion component:
-    ```
-        const accordionItems = [
+     #### Example Usage
+   <details>
+  <summary>Click to see example</summary>
+
+  ```javascript
+  const accordionItems = [
         {
           id: 1,
           title: 'Accordion Item 1',
@@ -78,7 +72,7 @@
           ],
         },
       ];
-    
+
       return (
         <Accordion
           accordionItems={accordionItems}
@@ -87,5 +81,4 @@
           itemClassName="custom-accordion-item"
         />
       );
-    };
-    ```
+</details>
