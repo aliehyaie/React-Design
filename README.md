@@ -32,7 +32,7 @@
       nested accordions and customize their appearance using Tailwind classes.
 
       | Prop            | Type                              | Default | Optional | Description                                                                                                                                                                                                                                                    |
-      | --------------- | --------------------------------- | ------- | -------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+            | --------------- | --------------------------------- | ------- | -------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
       | `accordionItems`| array of objects                  |         | ✗        | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) that is an array of AccordionItem objects to create nested accordions inside the current accordion item. |
       | `isMultiple`    | boolean                           | `false` | √        | Determines whether multiple accordion items can be open simultaneously.                                                                                                                                                                                        |
       | `className`     | string                            |         | √        | Adds custom CSS classes to the Accordion component.                                                                                                                                                                                                            |
@@ -88,12 +88,14 @@
 
     - ### Text Component
 
-      The Text component allows you to render styled text with customizable color and typography. It provides flexibility in
-      displaying different types of text, such as headings (h1-h6), paragraphs, or spans. You can also apply custom styles
+      The Text component allows you to render styled text with customizable color and typography. It provides
+      flexibility in
+      displaying different types of text, such as headings (h1-h6), paragraphs, or spans. You can also apply custom
+      styles
       using Tailwind classes.
 
       | Prop        | Type| Default | Optional | Description|
-      |-----|-------------------------------------------|---------|------------|-------------------------------------------------------------------------------------------------|
+            |-----|-------------------------------------------|---------|------------|-------------------------------------------------------------------------------------------------|
       | `color`     | `primary` <br> `text` | `text`| √        | The color of the text.|
       | `variant`   | `h1` <br> `h2` <br> `h3` <br> `h4` <br> `h5` <br> `h6` <br> `p` <br> `span` | `p`  | √        | The type of text variant to be rendered.|
       | `className` | string |      | √        | Adds custom CSS classes to the Text component.|
@@ -113,4 +115,29 @@
       );
       ```
 
+      </details>
+
+    - ### Toast Component
+
+      The Toast component is a wrapper for React Toastify, designed to simplify the usage of toast notifications in your
+      React application. It provides convenient methods for displaying success, error, info, and warning messages.
+
+      | Prop      | Type              | Optional | Description                                         |
+      | --------- | ----------------- | -------- | --------------------------------------------------- |
+      | `content` | string            | ✗        | The content of the toast notification.              |
+      | `options` | ToastOptions      | ✓        | Additional options for the toast notification.      |
+      
+      Please refer to the `react-toastify` documentation for more information on the available options.
+
+      #### Example Usage
+
+      <details>
+      <summary>Click to see example</summary>
+
+      ```javascript
+      toast.success('Success message');
+      toast.error('Error message');
+      toast.info('Info message');
+      toast.warning('Warning message');
+      ```
       </details>
