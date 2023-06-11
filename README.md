@@ -141,3 +141,46 @@
       toast.warning('Warning message');
       ```
       </details>
+
+  - ### Pagination Component
+
+    The Pagination component is used to display a paginated list of items. It provides navigation controls to move between pages and notifies the parent component when the current page changes.
+
+    | Prop            | Type                         | Optional | Description                                                                           |
+    | --------------- | ---------------------------- | -------- | ------------------------------------------------------------------------------------- |
+    | `onPageChange`  | `(currentPage: number) => void` | ✗        | A callback function invoked when the current page changes.                            |
+    | `totalCount`    | number                       | ✗        | The total number of items to be paginated.                                            |
+    | `siblingCount`  | number                       | ✓        | The number of sibling page links to display on each side of the current page.         |
+    | `currentPage`   | number                       | ✗        | The current active page.                                                              |
+    | `pageSize`      | number                       | ✓        | The number of items per page.                                                         |
+    | `className`     | string                       | ✓        | Additional CSS class to apply to the Pagination component.                             |
+
+    #### Example Usage
+
+    <details>
+      <summary>Click to see example</summary>
+
+      ```jsx
+       const ExampleComponent = () => {
+       const [currentPage, setCurrentPage] = useState(1);
+
+      const handlePageChange = (page) => {
+          setCurrentPage(page);
+       // Perform any necessary actions based on the new current page
+       };
+    
+     return (
+        <div>
+          {/* Render your paginated content here */}
+          <Pagination
+             onPageChange={handlePageChange}
+            totalCount={100}
+           siblingCount={1}
+           currentPage={currentPage}
+           pageSize={10}
+           className="pagination-custom"
+      />
+    </div>
+    )};
+    ```
+      </details>
