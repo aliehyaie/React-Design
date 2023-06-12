@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { IButton } from './IButton';
 import classes from './Button.module.scss';
 import Icon from '../Icon/Icon';
 import Link from 'next/link';
 import Loader from '../Loader/Loader';
 
-const Button: React.FC<IButton> = ({
+const Button: FC<IButton> = ({
     label,
     leadingIconName,
     helperIconName,

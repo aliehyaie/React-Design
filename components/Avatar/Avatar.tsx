@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { IAvatar } from './IAvatar';
 import Icon from '../Icon/Icon';
 import Image from 'next/image';
 import Text from '../Text/Text';
 import { twMerge } from 'tailwind-merge';
 
-const Avatar: React.FC<IAvatar> = ({
+const Avatar: FC<IAvatar> = ({
     variant = 'circle',
     imgSrc,
     label,

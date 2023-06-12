@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import classes from '../Accordion.module.scss';
 import Text from '../../Text/Text';
 import Icon from '../../Icon/Icon';
 import { Accordion } from '../Accordion';
 import { IAccordionItem } from './IAccordionItem';
 
-const AccordionItem: React.FC<IAccordionItem> = ({
+const AccordionItem: FC<IAccordionItem> = ({
     accordionItem,
     isMultiple,
     isActive = false,

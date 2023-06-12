@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classes from './Checkbox.module.scss';
 import { ICheckbox } from './ICheckbox';
 import Icon from '../../Icon/Icon';
 import Label from '../Label/Label';
 
-const Checkbox: React.FC<ICheckbox> = ({
+const Checkbox: FC<ICheckbox> = ({
     label,
     error,
     className,

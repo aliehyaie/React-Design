@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import classes from './Accordion.module.scss';
 import { IAccordion } from './IAccordion';
 import AccordionItem from './AccordionItem/AccordionItem';
 
-export const Accordion: React.FC<IAccordion> = ({
+export const Accordion: FC<IAccordion> = ({
     accordionItems,
     isMultiple,
     className,

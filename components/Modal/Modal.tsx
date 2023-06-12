@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect } from 'react';
+import React, { FC, PropsWithChildren, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import classes from './Modal.module.scss';
 import Icon from '../Icon/Icon';
@@ -6,7 +6,7 @@ import { IModal } from './IModal';
 import ReactDOM from 'react-dom';
 import { useRouter } from 'next/router';
 
-const Modal: React.FC<PropsWithChildren & IModal> = ({
+const Modal: FC<PropsWithChildren & IModal> = ({
     children,
     isOpen,
     nodeId,

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classes from './Switch.module.scss';
 import { ISwitch } from './ISwitch';
 import { twMerge } from 'tailwind-merge';
 import Icon from '../../Icon/Icon';
 import Label from '../Label/Label';
 
-const Switch: React.FC<ISwitch> = ({
+const Switch: FC<ISwitch> = ({
     label,
     error,
     rounded,
