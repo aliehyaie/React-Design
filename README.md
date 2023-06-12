@@ -205,7 +205,7 @@
     
       </details>
 
-    - ### Modal Component
+   - ### Modal Component
 
       The Modal component is used to display a modal dialog box. It provides a way to show content on top of the current page and allows the user to interact with it. The Modal component is rendered using the `ReactDOM.createPortal` function, which ensures that the modal is rendered as a direct child of the `body` element.
 
