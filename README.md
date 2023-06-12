@@ -184,3 +184,25 @@
     )};
     ```
       </details>
+
+  - ### Loader Component
+
+    The Loader component is used to display a loading indicator. It is a simple component that shows a flashing dot animation.
+
+    | Prop        | Type   | Optional | Description                                                          |
+    | ----------- | ------ | -------- | -------------------------------------------------------------------- |
+    | `className` | string | ✓        | Additional CSS class to apply to the Loader component.               |
+
+      #### Example Usage
+
+      <details>
+      <summary>Click to see example</summary>
+
+      ```jsx
+      return (
+        <Loader className="custom-loader" />
+      );
+      ```
+    
+      </details>
+
