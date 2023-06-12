@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 
-const Container: React.FC<PropsWithChildren> = ({ children }) => {
+const Container: FC<PropsWithChildren> = ({ children }) => {
     return (
         <div className='mx-auto max-w-[1440px] px-4 3xl:mr-28'>{children}</div>
     );

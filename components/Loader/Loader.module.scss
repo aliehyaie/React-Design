@@ -1,10 +1,10 @@
 .dotFlashing {
-    @apply relative w-2.5 h-2.5 rounded-full bg-primary animate-[dot-flashing_1s_infinite_alternate_0.5s];
+    @apply relative w-2.5 h-2.5 rounded-full bg-primary animate-[dot-flashing_1s_infinite_alternate_0.5s] flex gap-4;
 }
 
 .dotFlashing::before,
 .dotFlashing::after {
-    @apply inline-block absolute top-0 content-[''] w-2.5 h-2.5 rounded-full bg-primary;
+    @apply inline-block absolute top-0 content-[''] w-full h-full rounded-full bg-primary;
 }
 
 .dotFlashing::before {

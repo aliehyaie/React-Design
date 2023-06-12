@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { IInput } from './IInput';
 import Icon from '../../Icon/Icon';
 import classes from './Input.module.scss';
@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 import Label from '../Label/Label';
 import Error from '../Error/Error';
 
-const Input: React.FC<IInput> = ({
+const Input: FC<IInput> = ({
     label,
     iconRightName,
     iconLeftName,

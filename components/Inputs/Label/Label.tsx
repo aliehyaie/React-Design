@@ -1,14 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { twMerge } from 'tailwind-merge';
 import Text from '../../Text/Text';
 import { ILabel } from './ILabel';
 
-const Label: React.FC<ILabel> = ({
-    error,
-    label,
-    labelClassName,
-    required,
-}) => {
+const Label: FC<ILabel> = ({ error, label, labelClassName, required }) => {
     return (
         <Text
             className={twMerge(

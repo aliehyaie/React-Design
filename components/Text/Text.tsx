@@ -1,8 +1,8 @@
-import React, { PropsWithChildren } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 import { IText } from './IText';
 import classes from './Text.module.scss';
 
-const Text: React.FC<PropsWithChildren & IText> = ({
+const Text: FC<PropsWithChildren & IText> = ({
     color,
     variant,
     className,
