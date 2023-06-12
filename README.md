@@ -122,13 +122,12 @@
       The Toast component is a wrapper for React Toastify, designed to simplify the usage of toast notifications in your
       React application. It provides convenient methods for displaying success, error, info, and warning messages.
 
-      | Prop      | Type              | Optional | Description                                         |
-      | --------- | ----------------- | -------- | --------------------------------------------------- |
-      | `content` | string            | ✗        | The content of the toast notification.              |
-      | `options` | ToastOptions      | ✓        | Additional options for the toast notification.      |
-      
-      Please refer to the `react-toastify` documentation for more information on the available options.
-
+      | Prop            | Type                                | Default | Optional | Description                                                                                     |
+      | --------------- | ----------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------- |
+      | `content`       | string                              |         |   ✗       | The content of the toast notification.                                                          |
+      | `options`       | `ToastOptions` (defined in react-toastify) |         | ✓        | Additional options to customize the toast notification. See [react-toastify documentation](https://github.com/fkhadra/react-toastify#options) for available options. |
+      | `className`     | string                              |         | ✓  | Additional CSS class to apply to the Toast component.
+   
       #### Example Usage
 
       <details>
@@ -146,15 +145,15 @@
 
     The Pagination component is used to display a paginated list of items. It provides navigation controls to move between pages and notifies the parent component when the current page changes.
 
-    | Prop            | Type                         | Optional | Description                                                                           |
-    | --------------- | ---------------------------- | -------- | ------------------------------------------------------------------------------------- |
-    | `onPageChange`  | `(currentPage: number) => void` | ✗        | A callback function invoked when the current page changes.                            |
-    | `totalCount`    | number                       | ✗        | The total number of items to be paginated.                                            |
-    | `siblingCount`  | number                       | ✓        | The number of sibling page links to display on each side of the current page.         |
-    | `currentPage`   | number                       | ✗        | The current active page.                                                              |
-    | `pageSize`      | number                       | ✓        | The number of items per page.                                                         |
-    | `className`     | string                       | ✓        | Additional CSS class to apply to the Pagination component.                             |
-
+    | Prop              | Type              | Default | Optional | Description                                                                                              |
+    | ----------------- | ----------------- | ------- | -------- | -------------------------------------------------------------------------------------------------------- |
+    | `onPageChange`    | `(currentPage: number) => void` |         |  ✗        | Callback function to be called when the current page changes.                                             |
+    | `totalCount`      | number            |         |    ✗      | The total number of items.                                                                               |
+    | `siblingCount`    | number            | `1`     | ✓        | The number of visible page numbers on each side of the current page.                                     |
+    | `currentPage`     | number            |         |    ✗      | The current active page.                                                                                  |
+    | `pageSize`        | number            | `10`    | ✓        | The number of items to be displayed per page.                                                             |
+    | `className`       | string            |         | ✓        | Additional CSS class to apply to the Pagination component.                                                |
+  
     #### Example Usage
 
     <details>
@@ -189,9 +188,9 @@
 
     The Loader component is used to display a loading indicator. It is a simple component that shows a flashing dot animation.
 
-    | Prop        | Type   | Optional | Description                                                          |
-    | ----------- | ------ | -------- | -------------------------------------------------------------------- |
-    | `className` | string | ✓        | Additional CSS class to apply to the Loader component.               |
+     | Prop            | Type   | Default | Optional | Description                                                         |
+     | --------------- | ------ | ------- | -------- | ------------------------------------------------------------------- |
+     | `className`     | string |         | ✓        | Additional CSS class to apply to the Loader component.              |
 
       #### Example Usage
 
@@ -206,3 +205,46 @@
     
       </details>
 
+    - ### Modal Component
+
+      The Modal component is used to display a modal dialog box. It provides a way to show content on top of the current page and allows the user to interact with it. The Modal component is rendered using the `ReactDOM.createPortal` function, which ensures that the modal is rendered as a direct child of the `body` element.
+
+      | Prop                | Type                                        | Default | Optional | Description                                                                                                                                                                                           |
+      | ------------------- | ------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+      | `onClose`           | `(e?: React.MouseEvent<HTMLSpanElement>) => void` |         |   	✗       | Callback function to be called when the modal is closed.                                                                                                                                             |
+      | `nodeId`            | string                                      |         | ✓        | The id of the DOM element where the modal should be mounted. If not provided, the modal will be mounted directly to the `body` element.                                                            |
+      | `isOpen`            | boolean                                     |         |  	✗        | Determines whether the modal is open or closed.                                                                                                                                                      |
+      | `className`         | string                                      |         | ✓        | Additional CSS class to apply to the Modal component.                                                                                                                                                 |
+      | `closeModalOnBack`  | boolean                                     |         | ✓        | Determines whether the modal should be closed when the user navigates back using the browser's history (by pressing the back button). This is useful for handling the modal closing on browser navigation. |
+
+      #### Example Usage
+
+        <details>
+        <summary>Click to see example</summary>
+
+        ```javascript
+        const ExampleComponent = () => {
+        const [isOpen, setIsOpen] = useState(false);
+
+        const openModal = () => {
+           setIsOpen(true);
+        };
+
+       const closeModal = () => {
+          setIsOpen(false);
+        };
+
+       return (
+           <div>
+             <button onClick={openModal}>Open Modal</button>
+
+             <Modal onClose={closeModal} isOpen={isOpen} closeModalOnBack={true}>
+                 {/* Content of the modal */}
+               <h1>Modal Title</h1>
+               <p>Modal content goes here.</p>
+            </Modal>
+        </div>
+      )};
+      ```
+      
+  </details>
