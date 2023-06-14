@@ -290,3 +290,35 @@
     ```
 
     </details>
+
+   - ### Card Component
+
+    The Card component is used to display content in a visually appealing card-like container. It provides a structured layout with options for a title, subtitle, header, footer, and custom styling.
+
+     | Prop        | Type               | Default | Optional | Description                                                                 |
+     | ----------- | ------------------ | ------- | -------- | --------------------------------------------------------------------------- |
+     | `title`     | string             |         | √        | The title of the card.                                                      |
+     | `subtitle`  | string             |         | √        | The subtitle of the card.                                                   |
+     | `header`    | React.ReactElement |         | √        | The header component to be displayed at the top of the card.                 |
+     | `footer`    | React.ReactElement |         | √        | The footer component to be displayed at the bottom of the card.              |
+     | `className` | string             |         | √        | Adds custom CSS classes to the Card component.                               |
+     | `children`  | React.ReactNode    |         | √        | The content to be displayed inside the Card component.                       |
+
+    #### Example Usage
+
+    <details>
+       <summary>Click to see example</summary>
+
+    ```jsx
+      <Card
+      title="Card Title"
+      subtitle="Card Subtitle"
+      header={<div>Header Component</div>}
+      footer={<div>Footer Component</div>}
+      className="custom-card"
+    >
+      <div>Content inside the card</div>
+    </Card>
+    ```
+
+    </details>
