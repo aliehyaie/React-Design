@@ -248,3 +248,24 @@
       ```
       
   </details>
+
+  - ### Icon Component
+
+    The Icon component is used to display an icon in your application.
+
+    | Prop        | Type                                      | Default | Optional | Description                                                                     |
+    | ----------- | ----------------------------------------- | ------- | -------- | ------------------------------------------------------------------------------- |
+    | `iconName`  | string                                    |         | ✗        | The name or identifier of the icon to be displayed.                             |
+    | `className` | string                                    |         | ✓        | Additional CSS class to apply to the Icon component.                            |
+    | `onClick`   | (e: React.MouseEvent<HTMLSpanElement>) => void |         | ✓        | Event handler for the click event on the Icon component.                        |
+
+    #### Example Usage
+
+    <details>
+         <summary>Click to see example</summary>
+
+      ```jsx
+         <Icon iconName="icon-checkmark-circle" className="custom-icon" onClick={handleClick} />      
+      ```
+
+    </details>
