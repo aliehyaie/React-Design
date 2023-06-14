@@ -269,3 +269,24 @@
       ```
 
     </details>
+
+  - ### Container Component
+
+    The Container component is used to create a container that centers its content and sets a maximum width.
+
+    | Prop       | Type      | Default | Optional | Description                                         |
+    | ---------- | --------- | ------- | -------- | --------------------------------------------------- |
+    | `children` | ReactNode |         |     ✗     | The content to be displayed within the Container.   |
+
+    #### Example Usage
+
+    <details>
+       <summary>Click to see example</summary>
+
+    ```jsx
+      <Container>
+        <div>Content inside the container</div>
+      </Container>
+    ```
+
+    </details>
