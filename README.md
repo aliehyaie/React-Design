@@ -95,11 +95,11 @@
       using Tailwind classes.
 
       | Prop        | Type| Default | Optional | Description|
-      |-----|-------------------------------------------|---------|------------|-------------------------------------------------------------------------------------------------|
-      | `color`     | `primary` <br> `text` | `text`| √        | The color of the text.|
-      | `variant`   | `h1` <br> `h2` <br> `h3` <br> `h4` <br> `h5` <br> `h6` <br> `p` <br> `span` | `p`  | √        | The type of text variant to be rendered.|
-      | `className` | string |      | √        | Adds custom CSS classes to the Text component.|
-      | `children`  | ReactNode |      | ✗        | The content to be displayed within the Text component.|
+      |-----|-----------------------------------------|---------|------------|-------------------------------------------------------------------------------------------------|
+      | `color`     | primary <br> text | `text`| √        | The color of the text.|
+      | `variant`   | h1 <br> h2 <br> h3 <br> h4 <br> h5 <br> h6 <br> p <br> span | `p` | √        | The type of text variant to be rendered.|
+      | `className` | string |     | √        | Adds custom CSS classes to the Text component.|
+      | `children`  | ReactNode |     | ✗        | The content to be displayed within the Text component.|
 
       #### Example Usage
 
@@ -322,3 +322,34 @@
     ```
 
     </details>
+
+  - ### Avatar Component
+
+    The Avatar component is used to display user avatars or icons. It supports different variants, such as circular or square avatars, and provides options for displaying an image, an icon, or a text label.
+
+    | Prop         | Type               | Default     | Optional | Description                                                                 |
+    | ----------- | ------------------- | ----------- | -------- | --------------------------------------------------------------------------- |
+    | `variant`    | circle <br/> square | 'circle'    | √        | The variant of the avatar. Can be set to 'circle' or 'square'.               |
+    | `imgSrc`     | string             |             | √        | The source URL of the avatar image.                                          |
+    | `iconName`   | string             | 'icon-person' | √        | The name of the icon to be displayed if no image or label is provided.       |
+    | `label`      | string             |             | √        | The text label to be displayed if no image or icon is provided.              |
+    | `alt`        | string             |             | √        | The alternate text for the avatar image.                                     |
+    | `className`  | string             |             | √        | Adds custom CSS classes to the Avatar component.                             |
+
+    #### Example Usage
+
+       <details>
+        <summary>Click to see example</summary>
+
+       ```jsx
+         <Avatar
+           variant="circle"
+           imgSrc="/avatar.jpg"
+           iconName="icon-person"
+           label="John Doe"
+           alt="User Avatar"
+           className="custom-avatar"
+         />
+       ```
+
+  </details>
