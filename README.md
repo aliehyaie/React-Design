@@ -353,3 +353,26 @@
        ```
 
   </details>
+
+  - ### Avatar Group Component
+
+    The Avatar Group component is used to display a group of avatars or icons. It provides a container to hold multiple Avatar components.
+
+    | Prop       | Type                | Default | Optional | Description                                             |
+    | ---------- | ----------------- | --------- | -------- | ------------------------------------------------------- |
+    | `children` | React.ReactNode    |         |  ✗        | The Avatar components to be rendered within the group.  |
+
+    #### Example Usage
+
+     <details>
+           <summary>Click to see example</summary>
+
+      ```jsx
+             <AvatarGroup>
+                  <Avatar imgSrc="avatar1.jpg" />
+                  <Avatar imgSrc="avatar2.jpg" />
+                  <Avatar imgSrc="avatar3.jpg" />
+             </AvatarGroup>
+      ```
+
+     </details>
