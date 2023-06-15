@@ -323,7 +323,7 @@
 
     </details>
 
-  - ### Avatar Component
+ - ### Avatar Component
 
     The Avatar component is used to display user avatars or icons. It supports different variants, such as circular or square avatars, and provides options for displaying an image, an icon, or a text label.
 
