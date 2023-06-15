@@ -376,3 +376,27 @@
       ```
 
      </details>
+    
+  - ### Badge Component
+
+    The Badge component displays a small badge with optional value and severity.
+
+    | Prop        | Type     | Default | Optional | Description                                                                                           |
+    |-------------|---|-----|------------|-------------------------------------------------------------------------------------------------------|
+    | type        | circular<br/>normal   | `normal` | √ | Specifies the type of the badge. It can be either 'circular' or 'normal'.                              |
+    | isAbsolute  | boolean  | `false` | √ | Determines whether the badge should be positioned absolutely.                                          |
+    | position    | topRight<br/>topLeft<br/>bottomRight<br/>bottomLeft   | `bottomLeft` | √ | Defines the position of the badge. It can be 'topRight', 'topLeft', 'bottomRight', or 'bottomLeft'.    |
+    | value       | string   |   | √ | The value or text to be displayed within the badge.                                                    |
+    | severity    | warning<br/>info<br/>success<br/>error   | `success` | &#10003; | Indicates the severity or importance level of the badge. It can be 'warning', 'info', 'success', or 'error'. |
+    | className   | string   |   | √ | Additional CSS class names to be applied to the badge component.                                       |    
+
+     #### Example Usage
+
+      <details>
+         <summary>Click to see example</summary>
+
+       ```jsx
+              <Badge type="circular" position="topRight" value="5" severity="info" className="custom-badge" />
+       ```
+    
+     </details>
