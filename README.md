@@ -291,7 +291,7 @@
 
     </details>
 
-   - ### Card Component
+  - ### Card Component
 
     The Card component is used to display content in a visually appealing card-like container. It provides a structured layout with options for a title, subtitle, header, footer, and custom styling.
 
@@ -323,7 +323,7 @@
 
     </details>
 
- - ### Avatar Component
+  - ### Avatar Component
 
     The Avatar component is used to display user avatars or icons. It supports different variants, such as circular or square avatars, and provides options for displaying an image, an icon, or a text label.
 
