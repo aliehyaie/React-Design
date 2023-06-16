@@ -382,12 +382,12 @@
     The Badge component displays a small badge with optional value and severity.
 
     | Prop        | Type     | Default | Optional | Description                                                                                           |
-    |-------------|---|-----|------------|-------------------------------------------------------------------------------------------------------|
+    |-------------|---|---|------------|-------------------------------------------------------------------------------------------------------|
     | type        | circular<br/>normal   | `normal` | √ | Specifies the type of the badge. It can be either 'circular' or 'normal'.                              |
     | isAbsolute  | boolean  | `false` | √ | Determines whether the badge should be positioned absolutely.                                          |
     | position    | topRight<br/>topLeft<br/>bottomRight<br/>bottomLeft   | `bottomLeft` | √ | Defines the position of the badge. It can be 'topRight', 'topLeft', 'bottomRight', or 'bottomLeft'.    |
     | value       | string   |   | √ | The value or text to be displayed within the badge.                                                    |
-    | severity    | warning<br/>info<br/>success<br/>error   | `success` | &#10003; | Indicates the severity or importance level of the badge. It can be 'warning', 'info', 'success', or 'error'. |
+    | severity    | warning<br/>info<br/>success<br/>error   | `success` | √ | Indicates the severity or importance level of the badge. It can be 'warning', 'info', 'success', or 'error'. |
     | className   | string   |   | √ | Additional CSS class names to be applied to the badge component.                                       |    
 
      #### Example Usage
@@ -399,4 +399,33 @@
               <Badge type="circular" position="topRight" value="5" severity="info" className="custom-badge" />
        ```
     
+     </details>
+
+  - ### Button Component
+
+    The Button component is a customizable React button component that can be used to render interactive buttons with various styles and functionalities.
+  
+    | Prop        | Type                                           | Default                                                                                                       | Optional | Description                                                      |
+    |------------------------------------------------|---------------------------------------------------------------------------------------------------------------|-----|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+    | label        | string                                         |                                                                                                               | √ | The label or text to be displayed inside the button.             |
+    | leadingIconName  | string                                         |                                                                                                               | √ | The name of the icon to be displayed as the label.               |
+    | helperIconName    | string                                         |                                                                                                               | √ | The name of the helper icon to be displayed alongside the label. |
+    | iconPos       | right<br/>left                                 | `right`                                                                                                       | √ | Specifies the position of the helper icon relative to the label. |
+    | color    | primary<br/>text                               | `primary`                                                                                                     | √ | Defines the color scheme of the button.                          |
+    | variant    | filled<br/>outlined<br/>tonal<br/>text         | `filled`                                                                                                      | √ | Specifies the visual variant of the button.                          |
+    | shape    | normal<br/>chips                               | `normal`                                                                                                      | √ | Specifies the visual variant of the button.                          |
+    | href               | string                                         | The URL of the destination if the button is rendered as a link.                                               | √ | Determines the shape of the button.                          |
+    | isLoading   | boolean                                        |                                                                                                               | √ | Determines whether the button should display a loader.           |    
+    | className   | sring                                          |                                                                                                               | √ | Additional CSS class names to be applied to the button.           |    
+    | ...props               | React.ButtonHTMLAttributes<HTMLButtonElement>	 | Any additional valid attributes that can be applied to a HTML button element (e.g., onClick, disabled, etc.). | √ | Determines the shape of the button.                          |
+
+    #### Example Usage
+
+      <details>
+         <summary>Click to see example</summary>
+
+       ```jsx
+              <Button label="Click Me" color="primary" variant="filled" />
+       ```
+
      </details>
