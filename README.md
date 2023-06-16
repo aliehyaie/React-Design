@@ -429,3 +429,46 @@
        ```
 
      </details>
+
+  - ### Error Text Component
+
+    The Error Text component is a simple React component that displays an error message in a styled text format. It is commonly used to provide feedback or notify users about errors or validation issues.
+  
+    | Prop        | Type                                                | Default | Optional | Description                                                                                           |
+    |-----------------------------------------------------|---|---|------------|-------------------------------------------------------------------------------------------------------|
+    | errorMessage        | string                                              |  | ✗ | The error message to be displayed.                              |
+  
+    #### Example Usage
+
+      <details>
+         <summary>Click to see example</summary>
+
+       ```jsx
+            <Error errorMessage="This field is required." />
+       ```
+
+     </details>
+    
+  - ### Label Component
+
+    The Label component is a React component used to render a label for form inputs or other UI elements. It supports custom styling and optional error indication.
+
+    | Prop        | Type    | Default | Optional | Description                                                                                           |
+    |---------|---|---|------------|-------------------------------------------------------------------------------------------------------|
+    | error        | boolean |  | √ | Determines whether the label should indicate an error state.                              |
+    | label        | string |  | √ | The text content of the label.                              |
+    | required        | boolean |  | √ | Determines whether the label should indicate that the associated input is required.                              |
+    | labelClassName        | string |  | √ | Additional CSS class names to be applied to the label element.                              |
+
+    #### Example Usage
+
+    <details>
+       <summary>Click to see example</summary>
+
+     ```jsx
+         <Label label="Email Address" required={true} error={false} />
+     ```
+
+     </details>
+    
+     
