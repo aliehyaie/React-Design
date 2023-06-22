@@ -471,4 +471,30 @@
 
      </details>
     
+  - ### Checkbox Component
+
+    The Checkbox component is a React component used to render a checkbox input with an optional label. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
+
+    | Prop           | Type     | Default | Optional | Description                                                        |
+    | -------------- | -------- | ------- | -------- | ------------------------------------------------------------------ |
+    | className      | string   |         | √        | Additional CSS class names to be applied to the checkbox component. |
+    | labelClassName | string   |         | √        | Additional CSS class names to be applied to the label element.      |
+    | errorMessage   | string   |         | √        | The error message to display.                                      |
+    | error          | boolean  |         | √        | Determines whether the checkbox should indicate an error state.    |
+    | ...otherProps  |          |         |          | Other HTML input element properties are also supported.             |
+
+    #### Example Usage
+
+     <details>
+         <summary>Click to see example</summary>
+
+       ```jsx
+                 <Checkbox label="Agree to Terms" /> 
+       ```
+
+     </details>
+
+    
+    
+    
      
