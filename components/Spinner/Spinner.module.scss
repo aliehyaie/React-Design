@@ -1,0 +1,11 @@
+.lineSpinner {
+  @apply bg-primary relative h-8 w-2.5 animate-lineSpinner rounded-lg animation-delay-400
+  before:bg-primary before:rounded-lg before:absolute before:w-2.5 before:h-8 before:animate-lineSpinner before:animation-delay-[0.15s] before:right-4
+  after:bg-primary after:rounded-lg after:absolute after:w-2.5 after:h-8 after:animate-lineSpinner after:animation-delay-[0.6s] after:left-4;
+}
+
+// Circle
+
+.spinner{
+  @apply  h-10 w-10 animate-spinner fill-transparent stroke-primary stroke-[4px] stroke-linecap-round stroke-dasharray-[125];
+}
