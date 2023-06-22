@@ -514,7 +514,7 @@
      ```jsx
      <Input label='Name' /> 
      ```
-
+    
    </details>
     
     
