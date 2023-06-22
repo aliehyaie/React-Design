@@ -198,9 +198,7 @@
       <summary>Click to see example</summary>
 
       ```jsx
-      return (
-        <Loader className="custom-loader" />
-      );
+      <Loader className="custom-loader" />
       ```
     
       </details>
@@ -265,7 +263,7 @@
          <summary>Click to see example</summary>
 
       ```jsx
-         <Icon iconName="icon-checkmark-circle" className="custom-icon" onClick={handleClick} />      
+      <Icon iconName="icon-checkmark-circle" className="custom-icon" onClick={handleClick} />      
       ```
 
     </details>
@@ -284,9 +282,9 @@
        <summary>Click to see example</summary>
 
     ```jsx
-      <Container>
+    <Container>
         <div>Content inside the container</div>
-      </Container>
+    </Container>
     ```
 
     </details>
@@ -310,7 +308,7 @@
        <summary>Click to see example</summary>
 
     ```jsx
-      <Card
+    <Card
       title="Card Title"
       subtitle="Card Subtitle"
       header={<div>Header Component</div>}
@@ -342,14 +340,14 @@
         <summary>Click to see example</summary>
 
        ```jsx
-         <Avatar
+       <Avatar
            variant="circle"
            imgSrc="/avatar.jpg"
            iconName="icon-person"
            label="John Doe"
            alt="User Avatar"
            className="custom-avatar"
-         />
+       />
        ```
 
   </details>
@@ -368,11 +366,11 @@
            <summary>Click to see example</summary>
 
       ```jsx
-             <AvatarGroup>
-                  <Avatar imgSrc="avatar1.jpg" />
-                  <Avatar imgSrc="avatar2.jpg" />
-                  <Avatar imgSrc="avatar3.jpg" />
-             </AvatarGroup>
+      <AvatarGroup>
+           <Avatar imgSrc="avatar1.jpg" />
+           <Avatar imgSrc="avatar2.jpg" />
+           <Avatar imgSrc="avatar3.jpg" />
+      </AvatarGroup>
       ```
 
      </details>
@@ -396,7 +394,7 @@
          <summary>Click to see example</summary>
 
        ```jsx
-              <Badge type="circular" position="topRight" value="5" severity="info" className="custom-badge" />
+       <Badge type="circular" position="topRight" value="5" severity="info" className="custom-badge" />
        ```
     
      </details>
@@ -425,7 +423,7 @@
          <summary>Click to see example</summary>
 
        ```jsx
-              <Button label="Click Me" color="primary" variant="filled" />
+       <Button label="Click Me" color="primary" variant="filled" />
        ```
 
      </details>
@@ -444,7 +442,7 @@
          <summary>Click to see example</summary>
 
        ```jsx
-            <Error errorMessage="This field is required." />
+       <Error errorMessage="This field is required." />
        ```
 
      </details>
@@ -466,7 +464,7 @@
        <summary>Click to see example</summary>
 
      ```jsx
-         <Label label="Email Address" required={true} error={false} />
+     <Label label="Email Address" required={true} error={false} />
      ```
 
      </details>
@@ -479,8 +477,8 @@
     | -------------- | -------- | ------- | -------- | ------------------------------------------------------------------ |
     | className      | string   |         | √        | Additional CSS class names to be applied to the checkbox component. |
     | labelClassName | string   |         | √        | Additional CSS class names to be applied to the label element.      |
-    | errorMessage   | string   |         | √        | The error message to display.                                      |
     | error          | boolean  |         | √        | Determines whether the checkbox should indicate an error state.    |
+    | errorMessage   | string   |         | √        | The error message to display.                                      |
     | ...otherProps  |          |         |          | Other HTML input element properties are also supported.             |
 
     #### Example Usage
@@ -489,11 +487,35 @@
          <summary>Click to see example</summary>
 
        ```jsx
-                 <Checkbox label="Agree to Terms" /> 
+        <Checkbox label="Agree to Terms" /> 
        ```
 
      </details>
+    
+  - ### Input Component
 
+    The Input component is a React component used to render a text input with an optional label and icons. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
+
+    | Prop             | Type    | Default | Optional | Description                                                        |
+    | ---------------- | ------- | ------- | -------- | ------------------------------------------------------------------ |
+    | iconRightName    | string  |         | √        | The name of the right icon.                                       |
+    | iconLeftName     | string  |         | √        | The name of the left icon.                                        |
+    | className        | string  |         | √        | Additional CSS class names to be applied to the input component.   |
+    | labelClassName   | string  |         | √        | Additional CSS class names to be applied to the label element.     |
+    | error            | boolean |         | √        | Determines whether the input should indicate an error state.       |
+    | errorMessage     | string  |         | √        | The error message to display.                                      |
+    | ...otherProps    |         |         |          | Other HTML input element properties are also supported.            |
+
+    #### Example Usage
+
+    <details>
+       <summary>Click to see example</summary>
+
+     ```jsx
+     <Input label='Name' /> 
+     ```
+
+   </details>
     
     
     
