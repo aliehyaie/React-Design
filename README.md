@@ -563,6 +563,40 @@
      ```
 
     </details>
+
+  - ### Select Component
+
+    The Select component is a React component that wraps the react-select library, providing a customizable dropdown select input. It is fully compatible with React Hook Form.
+
+    | Prop            | Type              | Default | Optional | Description                                                                                   |
+    | --------------- | ----------------- | ------- | -------- | --------------------------------------------------------------------------------------------- |
+    | label           | string            |         | √        | The label text for the select input.                                                          |
+    | required        | boolean           |         | √        | Determines whether the select input is required.                                              |
+    | error           | boolean           |         | √        | Determines whether the select should indicate an error state.                                |
+    | errorMessage    | string            |         | √        | The error message to display.                                                                 |
+    | className       | string            |         | √        | Additional CSS class names to be applied to the select component.                             |
+    | labelClassName  | string            |         | √        | Additional CSS class names to be applied to the label element.                                |
+    | ...otherProps   | StateManagerProps |         |          | Other props supported by the react-select library. Refer to the [documentation](https://react-select.com/props) for a full list of available props. |
+
+    #### Example Usage
+
+    <details>
+      <summary>Click to see example</summary>
+
+      ```jsx
+      <Select
+         label="Favorite Color"
+         options={[
+            { value: 'red', label: 'Red' },
+            { value: 'blue', label: 'Blue' },
+            { value: 'green', label: 'Green' },
+          ]}
+         required={true}
+       /> 
+      ```
+
+    </details>
+    
     
     
        
