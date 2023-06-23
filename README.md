@@ -479,7 +479,7 @@
     | labelClassName | string   |         | √        | Additional CSS class names to be applied to the label element.      |
     | error          | boolean  |         | √        | Determines whether the checkbox should indicate an error state.    |
     | errorMessage   | string   |         | √        | The error message to display.                                      |
-    | ...otherProps  |          |         |          | Other HTML input element properties are also supported.             |
+    | ...otherProps  |   React.HTMLProps\<HTMLInputElement>      |         |          | Other HTML input element properties are also supported.             |
 
     #### Example Usage
 
@@ -504,7 +504,7 @@
     | labelClassName   | string  |         | √        | Additional CSS class names to be applied to the label element.     |
     | error            | boolean |         | √        | Determines whether the input should indicate an error state.       |
     | errorMessage     | string  |         | √        | The error message to display.                                      |
-    | ...otherProps    |         |         |          | Other HTML input element properties are also supported.            |
+    | ...otherProps    |     React.HTMLProps\<HTMLInputElement>    |         |          | Other HTML input element properties are also supported.            |
 
     #### Example Usage
 
@@ -527,7 +527,7 @@
     | labelClassName | string  |         | √        | Additional CSS class names to be applied to the label element.      |
     | error          | boolean |         | √        | Determines whether the radio should indicate an error state.       |
     | errorMessage   | string  |         | √        | The error message to display.                                      |
-    | ...otherProps  |         |         |          | Other HTML input element properties are also supported.             |
+    | ...otherProps  |   React.HTMLProps\<HTMLInputElement>      |         |          | Other HTML input element properties are also supported.             |
 
     #### Example Usage
 
@@ -551,7 +551,7 @@
     | error          | boolean |         | √        | Determines whether the radio should indicate an error state.       |
     | errorMessage   | string  |         | √        | The error message to display.                                      |
     | rounded        | boolean | true    | √        | Determines whether the switch toggle should have rounded corners.  |
-    | ...otherProps  |         |         |          | Other HTML input element properties are also supported.             |
+    | ...otherProps  |    React.HTMLProps\<HTMLInputElement>     |         |          | Other HTML input element properties are also supported.             |
 
     #### Example Usage
 
@@ -596,6 +596,45 @@
       ```
 
     </details>
+
+  - ### Range Component
+
+    The Range component is a React component that allows the selection of a range of values. It supports both single and multi-range selection and provides visual indicators for the selected range. It is fully compatible with React Hook Form.
+  
+    **Important Note**: Please note that this component is currently under development and may not have all features implemented yet.
+
+    | Prop           | Type    | Default | Optional | Description                                                        |
+    | -------------- |---------| ------ | -------- | ------------------------------------------------------------------ |
+    | min               | number                 | `0`       | √       | The minimum value of the range.                                                                                                                                                                    |
+    | max               | number                 | `10000`   | √       | The maximum value of the range.                                                                                                                                                                    |
+    | value             | number <br/> [number, number] | `0`        | √        | The current value(s) of the range. For single-range selection, pass a number. For multi-range selection, pass an array of two numbers representing the minimum and maximum values.                    |
+    | isSingle          | boolean                | `true`       |          | Determines whether the range is for single or multi-range selection.                                                                                                                               |
+    | step              | number                 | `1000`       | √        | The step size between values in the range.                                                                                                                                                         |
+    | priceGap              | number                 | `1000`       | √        | The minimum gap between the minimum and maximum values in a multi-range selection.                                                                                                                                                         |
+    | showIndicators    | boolean                |            | √        | Determines whether to show visual indicators for the selected range.                                                                                                                               |
+    | onChange          | function               |            |          | The callback function to handle the range value change. The function receives the new value(s) as a parameter.                                                                                    |
+    | className         | string                 |            | √        | Additional CSS class names to be applied to the range component.                                                                                                                                   |
+    | ...otherProps  |    React.HTMLProps\<HTMLInputElement>     |         |         | Other HTML input element properties are also supported.             |
+
+    #### Example Usage
+
+    <details>
+      <summary>Click to see example</summary>
+
+      ```jsx
+      <Range
+          min={0}
+          max={100}
+         value={[20, 80]}
+         isSingle={false}
+         step={5}
+         priceGap={10}
+         onChange={(values) => console.log('Selected Range:', values)}
+    />
+     ```
+
+    </details>
+
     
     
     
