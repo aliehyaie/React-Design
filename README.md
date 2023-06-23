@@ -21,7 +21,7 @@
 
 ***
 
-- **components**: The "components" folder serves as the central location for all the reusable UI components in this
+- **Components**: The "components" folder serves as the central location for all the reusable UI components in this
   project. It follows a modular approach, where each component is contained within its own folder and has a dedicated
   file for its implementation. Here's a brief overview of some of the key components you'll find in this folder:
 
@@ -525,8 +525,8 @@
     | -------------- | ------- | ------- | -------- | ------------------------------------------------------------------ |
     | className      | string  |         | √        | Additional CSS class names to be applied to the radio component.    |
     | labelClassName | string  |         | √        | Additional CSS class names to be applied to the label element.      |
-    | errorMessage   | string  |         | √        | The error message to display.                                      |
     | error          | boolean |         | √        | Determines whether the radio should indicate an error state.       |
+    | errorMessage   | string  |         | √        | The error message to display.                                      |
     | ...otherProps  |         |         |          | Other HTML input element properties are also supported.             |
 
     #### Example Usage
@@ -539,6 +539,31 @@
      ```
 
     </details>
+
+  - ### Switch Component
+
+    The Switch component is a React component used to render a switch toggle input with an optional label. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
+
+    | Prop           | Type    | Default | Optional | Description                                                        |
+    | -------------- | ------- | ------- | -------- | ------------------------------------------------------------------ |
+    | className      | string  |         | √        | Additional CSS class names to be applied to the radio component.    |
+    | labelClassName | string  |         | √        | Additional CSS class names to be applied to the label element.      |
+    | error          | boolean |         | √        | Determines whether the radio should indicate an error state.       |
+    | errorMessage   | string  |         | √        | The error message to display.                                      |
+    | rounded        | boolean | true    | √        | Determines whether the switch toggle should have rounded corners.  |
+    | ...otherProps  |         |         |          | Other HTML input element properties are also supported.             |
+
+    #### Example Usage
+
+    <details>
+      <summary>Click to see example</summary>
+
+      ```jsx
+      <Switch label="Enable Notifications" rounded={false} />
+     ```
+
+    </details>
     
+       
     
      
