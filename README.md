@@ -641,7 +641,7 @@
     The Loader component is used to display a loading indicator. It is a simple component that shows a flashing dot animation.
 
     | Prop            | Type   | Default | Optional | Description                                                         |
-         | --------------- | ------ | ------- | -------- | ------------------------------------------------------------------- |
+    | --------------- | ------ | ------- | -------- | ------------------------------------------------------------------- |
     | `className`     | string |         | ✓        | Additional CSS class to apply to the Loader component.              |
 
     #### Example Usage
