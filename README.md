@@ -184,25 +184,6 @@
     ```
       </details>
 
-  - ### Loader Component
-
-    The Loader component is used to display a loading indicator. It is a simple component that shows a flashing dot animation.
-
-     | Prop            | Type   | Default | Optional | Description                                                         |
-     | --------------- | ------ | ------- | -------- | ------------------------------------------------------------------- |
-     | `className`     | string |         | ✓        | Additional CSS class to apply to the Loader component.              |
-
-      #### Example Usage
-
-      <details>
-      <summary>Click to see example</summary>
-
-      ```jsx
-      <Loader className="custom-loader" />
-      ```
-    
-      </details>
-
    - ### Modal Component
 
       The Modal component is used to display a modal dialog box. It provides a way to show content on top of the current page and allows the user to interact with it. The Modal component is rendered using the `ReactDOM.createPortal` function, which ensures that the modal is rendered as a direct child of the `body` element.
@@ -655,9 +636,42 @@
 
       </details>
 
+  - ### Loader Component
 
-    
-    
+    The Loader component is used to display a loading indicator. It is a simple component that shows a flashing dot animation.
+
+    | Prop            | Type   | Default | Optional | Description                                                         |
+         | --------------- | ------ | ------- | -------- | ------------------------------------------------------------------- |
+    | `className`     | string |         | ✓        | Additional CSS class to apply to the Loader component.              |
+
+    #### Example Usage
+
+      <details>
+      <summary>Click to see example</summary>
+
+      ```jsx
+      <Loader className="custom-loader" />
+      ```
+
+      </details>
+
+***
+
+- **iconmoon**: The iconmoon folder contains a collection of icons provided by the IconMoon library. To view all the available icons, you can open the `index.html` file located in this folder using a web browser.
+
+***
+
+- **hooks**: The hooks folder in this project contains custom hooks that can be used to add specific functionality or behavior to React components. These hooks are reusable pieces of logic that can be shared across different components, promoting code reuse and modularization.
+
+***
+
+- **pages**: The pages folder contains all the pages of the project. One specific file within this folder is form.tsx, which showcases an integration of the Inputs component with React Hook Form.
+ 
+***
+
+- **utils**:
+  The utils folder in your project serves as a central location for utility functions and modules that are used throughout your project. It provides a structured organization for reusable code and helps in maintaining a clean and modular codebase.
+  Within the utils folder, you mentioned the presence of a validations subfolder. This subfolder contains additional folders named messages and regex. These folders store validation messages and regular expressions used for validation purposes in your project.    
     
        
     
