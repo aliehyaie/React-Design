@@ -17,7 +17,7 @@ export default function Home() {
                 />
             </Head>
             <main className='mx-auto flex h-screen w-screen flex-col items-center justify-center'>
-                <Text variant='h1' className='ltr' color='primary'>
+                <Text variant='h1' color='primary' className='ltr'>
                     Which would be worse - to live as a monster, or to die as a
                     good man?
                 </Text>
