@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import Input from '../components/Inputs/Input/Input';
-import Select from '../components/Inputs/Select/Select';
-import { toast } from '../components/Toast/Toast';
+import Text from '../components/Text/Text';
 
 export default function Home() {
     return (
@@ -19,13 +17,10 @@ export default function Home() {
                 />
             </Head>
             <main className='mx-auto flex h-screen w-screen flex-col items-center justify-center'>
-                <div onClick={() => toast.error('ERROR')}>CC</div>
-                <Input error={false} errorMessage={'YUP!'} />
-                <Select
-                    options={[{ label: '1', value: '1' }]}
-                    error={true}
-                    errorMessage='This is that it is!'
-                />
+                <Text variant='h1' className='ltr' color='primary'>
+                    Which would be worse - to live as a monster, or to die as a
+                    good man?
+                </Text>
             </main>
         </>
     );
