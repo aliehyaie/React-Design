@@ -619,21 +619,42 @@
     #### Example Usage
 
     <details>
-      <summary>Click to see example</summary>
+        <summary>Click to see example</summary>
 
-      ```jsx
-      <Range
-          min={0}
-          max={100}
-         value={[20, 80]}
-         isSingle={false}
-         step={5}
-         priceGap={10}
-         onChange={(values) => console.log('Selected Range:', values)}
-    />
-     ```
+       ```jsx
+        <Range
+            min={0}
+            max={100}
+           value={[20, 80]}
+           isSingle={false}
+           step={5}
+           priceGap={10}
+           onChange={(values) => console.log('Selected Range:', values)}
+      />
+      ```
 
     </details>
+
+   - ### Spinner Component
+
+     The Spinner component is a React component used to render a loading indicator. It supports two types: circle and line.
+     
+      | Prop           | Type            | Default | Optional | Description                                                        |
+      |-----------------|---------| ------- | -------- | ------------------------------------------------------------------ |
+      | type      | circle<br/>line | `line`   | √        | The type of the spinner to render.    |
+      | className | string          |         | √        | Additional CSS class names to be applied to the spinner element.     |
+      
+      #### Example Usage
+
+      <details>
+        <summary>Click to see example</summary>
+
+        ```jsx
+        <Spinner type="circle" />
+        ```
+
+      </details>
+
 
     
     
