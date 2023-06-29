@@ -1,5 +1,7 @@
 # Awesome React Design System ✨
 
+![Project hero banner](/public/images/banner.png)
+
 ### Features
 
 - 🎨 A wide range of pre-built, customizable UI components, including buttons, forms, modals, and more
