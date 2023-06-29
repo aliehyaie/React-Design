@@ -32,7 +32,6 @@ const Modal: FC<PropsWithChildren & IModal> = ({
         if (router.asPath.includes('#modal')) {
             router.back();
         }
-        onClose();
     };
 
     return ReactDOM.createPortal(
