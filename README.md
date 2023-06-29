@@ -12,6 +12,17 @@
 - ⚛️ Supports React Hook Form out of the box for easy form handling
 - 🔧 Well-structured codebase for maintainability and extensibility
 
+## Getting Started
+To run the project, please follow these steps:
+
+Please ensure that your Node version is at least 14.18.0 before running the project.
+
+1. Clone the project repository.
+2. Open the project directory.
+3. Install the project dependencies using Yarn by running `yarn` or `yarn install`.
+4. After the packages are installed, start the development server by running `yarn dev`.
+5. Once the server is up and running, you can access the project in your browser at `http://localhost:3000`
+
 **Important Note:**
 
 When working on this project, please ensure that you create a branch for pushing your changes. Your branch name should follow the following format:
