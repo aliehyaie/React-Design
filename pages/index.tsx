@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import { Accordion } from '../components/Accordion/Accordion';
+import Text from '../components/Text/Text';
 
 export default function Home() {
     return (
@@ -17,16 +17,10 @@ export default function Home() {
                 />
             </Head>
             <main className='mx-auto flex h-screen w-screen flex-col items-center justify-center'>
-                <Accordion
-                    className='mx-auto w-[400px]'
-                    accordionItems={[
-                        {
-                            title: 'Title',
-                            content: 'This is the first accordtion',
-                            id: 'Ac1',
-                        },
-                    ]}
-                />
+                <Text variant='h1' color='primary' className='ltr'>
+                    Which would be worse - to live as a monster, or to die as a
+                    good man?
+                </Text>
             </main>
         </>
     );

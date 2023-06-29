@@ -1,8 +1,8 @@
-import React, { MutableRefObject, useEffect, useRef } from 'react';
+import React, { FC, MutableRefObject, useEffect, useRef } from 'react';
 import classes from './Range.module.scss';
 import { IRange } from './IRange';
 
-const Range: React.FC<IRange> = ({
+const Range: FC<IRange> = ({
     min,
     max,
     value,
