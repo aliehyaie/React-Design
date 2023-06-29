@@ -15,7 +15,7 @@ const Label: FC<ILabel> = ({ error, label, labelClassName, required }) => {
             {required && (
                 <Text
                     variant='span'
-                    className='absolute -top-1 -left-2 block h-1.5 w-1.5 rounded-full bg-error'
+                    className='absolute -left-2 -top-1 block h-1.5 w-1.5 rounded-full bg-error'
                 />
             )}
         </Text>

@@ -35,7 +35,7 @@ const Input: FC<IInput> = ({
                     {iconRightName && (
                         <Icon
                             iconName={iconRightName}
-                            className='absolute top-4 right-3'
+                            className='absolute right-3 top-4'
                         />
                     )}
                     <input
@@ -49,7 +49,7 @@ const Input: FC<IInput> = ({
                     {iconLeftName && (
                         <Icon
                             iconName={iconLeftName}
-                            className='absolute top-4 left-3'
+                            className='absolute left-3 top-4'
                         />
                     )}
                 </div>
