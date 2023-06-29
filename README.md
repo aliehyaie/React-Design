@@ -11,6 +11,7 @@
 - 🌈 Theming support for effortless customization
 - ⚛️ Supports React Hook Form out of the box for easy form handling
 - 🔧 Well-structured codebase for maintainability and extensibility
+- 📖 Comprehensive documentation
 
 ## Getting Started
 To run the project, please follow these steps:
