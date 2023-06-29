@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { IBadge } from './IBadge';
 import classes from './Badge.module.scss';
 
-const Badge: React.FC<IBadge> = ({
+const Badge: FC<IBadge> = ({
     position = 'bottomLeft',
     value = '',
     severity = 'success',

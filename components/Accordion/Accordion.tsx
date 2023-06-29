@@ -1,65 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import classes from './Accordion.module.scss';
-import { IAccordion, IAccordionItem } from './IAccordion';
-import Text from '../Text/Text';
-import Icon from '../Icon/Icon';
+import { IAccordion } from './IAccordion';
+import AccordionItem from './AccordionItem/AccordionItem';
 
-const AccordionItem: React.FC<IAccordionItem> = ({
-    accordionItem,
-    isMultiple,
-    isActive = false,
-    toggleOnlyOneAccordionItemHandler,
-    itemClassName,
-}) => {
-    const [isVisible, setIsVisible] = useState(isActive);
-    useEffect(() => {
-        setIsVisible(isActive);
-    }, [isActive]);
-    const toggleAccordionItemHandler = (
-        e: React.MouseEvent<HTMLDivElement>
-    ) => {
-        e.stopPropagation();
-        setIsVisible(prevState => !prevState);
-    };
-    return (
-        <div className={`${classes.item} ${itemClassName}`}>
-            <div
-                className={classes.title}
-                onClick={e =>
-                    isMultiple
-                        ? toggleAccordionItemHandler(e)
-                        : toggleOnlyOneAccordionItemHandler(accordionItem.id)
-                }
-            >
-                <Text variant='h2'>{accordionItem.title}</Text>
-                <Icon
-                    className={`text-lg ${classes.icon} ${
-                        isVisible ? classes.show : ''
-                    }`}
-                    iconName='icon-arrow-ios-downward'
-                />
-            </div>
-            <Text
-                variant='p'
-                className={`${classes.content} ${
-                    isVisible ? classes.show : ''
-                }`}
-            >
-                {accordionItem.content}
-            </Text>
-            {accordionItem?.children && (
-                <Accordion
-                    className={`mt-2 ${classes.content} ${
-                        isVisible ? classes.show : ''
-                    }`}
-                    accordionItems={accordionItem.children}
-                />
-            )}
-        </div>
-    );
-};
-
-export const Accordion: React.FC<IAccordion> = ({
+export const Accordion: FC<IAccordion> = ({
     accordionItems,
     isMultiple,
     className,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { IInput } from './IInput';
 import Icon from '../../Icon/Icon';
 import classes from './Input.module.scss';
@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 import Label from '../Label/Label';
 import Error from '../Error/Error';
 
-const Input: React.FC<IInput> = ({
+const Input: FC<IInput> = ({
     label,
     iconRightName,
     iconLeftName,
@@ -35,7 +35,7 @@ const Input: React.FC<IInput> = ({
                     {iconRightName && (
                         <Icon
                             iconName={iconRightName}
-                            className='absolute top-4 right-3'
+                            className='absolute right-3 top-4'
                         />
                     )}
                     <input
@@ -49,7 +49,7 @@ const Input: React.FC<IInput> = ({
                     {iconLeftName && (
                         <Icon
                             iconName={iconLeftName}
-                            className='absolute top-4 left-3'
+                            className='absolute left-3 top-4'
                         />
                     )}
                 </div>

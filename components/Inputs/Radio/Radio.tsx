@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { IRadio } from './IRadio';
 import classes from './Radio.module.scss';
 import Label from '../Label/Label';
 
-const Radio: React.FC<IRadio> = ({
+const Radio: FC<IRadio> = ({
     className,
     labelClassName,
     label,
