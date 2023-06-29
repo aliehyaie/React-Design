@@ -12,6 +12,23 @@
 - ⚛️ Supports React Hook Form out of the box for easy form handling
 - 🔧 Well-structured codebase for maintainability and extensibility
 
+**Important Note:**
+
+When working on this project, please ensure that you create a branch for pushing your changes. Your branch name should follow the following format:
+
+- For adding new features: `feature/some-features`
+- For fixing issues: `fix/some-fixes`
+- For general chores or miscellaneous tasks: `chore/...`
+- And so on ...
+
+Additionally, when committing your files, it is crucial to follow the commit lint format. Failure to comply with this format will result in Husky preventing you from pushing your code. The commit lint format should be as follows:
+
+`feat: add radio component`
+
+To see all the `commitlint` rules, please visit the [Commitlint site](https://commitlint.js.org/) or [Conventional Commits site](https://www.conventionalcommits.org/en/v1.0.0/).
+
+Please adhere to these guidelines to maintain a consistent and organized development process.
+
 ### Project Structure Folders
 
 - **.husky**: The "husky" folder in this project contains the configuration for the Husky library. Husky is a tool that
