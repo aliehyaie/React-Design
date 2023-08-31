@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Dayjs } from 'dayjs';
 import Text from '../Text/Text';
-import { DateTimeUtils } from '../../utils/DateTime/DateTime';
-import { getAllDates } from '../../helper/Calendar';
+import { DateTimeUtils } from '../../utils/dateTime';
+import { getAllDates } from '../../helper/calendar';
 import { ICalendar } from './ICalendar';
 
 const CalendarCells: FC<Required<Pick<ICalendar, 'date' | 'events'>>> = ({

@@ -1,6 +1,6 @@
 import { IHeader } from './IHeader';
 import type { FC } from 'react';
-import { DateTimeUtils } from '../../../utils/DateTime/DateTime';
+import { DateTimeUtils } from '../../../utils/dateTime';
 import Icon from '../../Icon/Icon';
 import Text from '../../Text/Text';
 

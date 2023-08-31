@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DateTimeUtils } from '../../utils/DateTime/DateTime';
+import { DateTimeUtils } from '../../utils/dateTime';
 import CalendarHeader from './Header/Header';
 import CalendarDays from './Days';
 import CalendarCells from './Cells';
