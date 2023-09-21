@@ -1,11 +1,13 @@
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { Dayjs, OpUnitType } from 'dayjs';
 import jalaliDay from 'jalaliday';
 import weekdayPlugin from 'dayjs/plugin/weekday';
 import isTodayPlugin from 'dayjs/plugin/isToday';
+import isBetween from 'dayjs/plugin/isBetween';
 
 dayjs.extend(jalaliDay);
 dayjs.extend(weekdayPlugin);
 dayjs.extend(isTodayPlugin);
+dayjs.extend(isBetween);
 
 type DateTimeOptionsType = {
     calendar?: 'gregory' | 'jalali';
@@ -26,8 +28,8 @@ export class DateTimeUtils {
     }
 
     getFormattedDate(
-        format: DateTimeOptionsType['format'],
-        date?: DateTimeOptionsType['date']
+        date?: DateTimeOptionsType['date'],
+        format: DateTimeOptionsType['format'] = 'YYYY/MM/DD'
     ) {
         return this.getDayjsInstance(date).format(format);
     }
@@ -45,7 +47,11 @@ export class DateTimeUtils {
     }
 
     checkIsToday(date: NonNullable<DateTimeOptionsType['date']>) {
-        return dayjs(date).isToday();
+        return dayjs(date).calendar('gregory').locale('en').isToday();
+    }
+
+    getDaysNameOfWeek(format = 'dddd') {
+        return [...Array(7)].map((_, i) => this.getDayName(i, format));
     }
 
     getDayName(dayIndex = 0, format = 'dddd') {
@@ -62,5 +68,45 @@ export class DateTimeUtils {
 
     getPrevMonthDate(date?: DateTimeOptionsType['date']) {
         return this.getDayjsInstance(date).subtract(1, 'month');
+    }
+
+    isSame(
+        firstDate: DateTimeOptionsType['date'],
+        secondDate: DateTimeOptionsType['date']
+    ) {
+        return this.getDayjsInstance(firstDate).isSame(
+            this.getDayjsInstance(secondDate)
+        );
+    }
+
+    isBefore(
+        firstDate: DateTimeOptionsType['date'],
+        secondDate: DateTimeOptionsType['date'],
+        unit: OpUnitType = 'date'
+    ) {
+        return this.getDayjsInstance(firstDate).isBefore(
+            this.getDayjsInstance(secondDate),
+            unit
+        );
+    }
+
+    isAfter(
+        firstDate: DateTimeOptionsType['date'],
+        secondDate: DateTimeOptionsType['date']
+    ) {
+        return this.getDayjsInstance(firstDate).isAfter(
+            this.getDayjsInstance(secondDate)
+        );
+    }
+
+    isBetween(
+        date: DateTimeOptionsType['date'],
+        minDate: DateTimeOptionsType['date'],
+        maxDate: DateTimeOptionsType['date']
+    ) {
+        return this.getDayjsInstance(date).isBetween(
+            this.getDayjsInstance(minDate),
+            this.getDayjsInstance(maxDate)
+        );
     }
 }
