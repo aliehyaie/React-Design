@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { usePagination, DOTS } from '../../hooks/usePagination/usePagination';
+import { usePagination, DOTS } from '../../hooks/usePagination';
 import classes from './Pagination.module.scss';
 import { IPagination } from './IPagination';
 import Icon from '../Icon/Icon';
