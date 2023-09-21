@@ -13,3 +13,15 @@ export const getAllDates = (date: Dayjs) => {
     }
     return allDates;
 };
+
+export const getFormattedDateObject = (date: Dayjs) => ({
+    day: date.date(),
+    gDay: date.calendar('gregory').date(),
+    month: date.month(),
+    year: date.year(),
+    dayOfWeek: date.weekday(),
+    isHoliday: dateTimeUtils.checkIsHoliday(date),
+    isCurrentMonth: date.month() === dateTimeUtils.getNow().month(),
+    hasPassed: dateTimeUtils.isBefore(date, dateTimeUtils.getNow(), 'date'),
+    isToday: dateTimeUtils.checkIsToday(date),
+});

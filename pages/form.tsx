@@ -13,9 +13,11 @@ import Checkbox from '../components/Inputs/Checkbox/Checkbox';
 import Radio from '../components/Inputs/Radio/Radio';
 import Switch from '../components/Inputs/Switch/Switch';
 import Range from '../components/Inputs/Range/Range';
+import Calendar from '../components/Inputs/Calendar/Calendar';
 
 interface IFormValues {
     fullName: string;
+    date: string;
     mobile: string;
     foods: { label: string; value: number } | null;
     needFood: boolean;
@@ -28,6 +30,7 @@ const Form = () => {
     const { handleSubmit, control, watch, formState } = useForm<IFormValues>({
         defaultValues: {
             fullName: '',
+            date: '',
             mobile: '',
             foods: null,
             needFood: false,
@@ -56,6 +59,23 @@ const Form = () => {
                             placeholder='نام و نام خانوادگی'
                             label='نام و نام خانوادگی'
                             onChange={onChange}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name='date'
+                    rules={{
+                        required: requiredMessage('تاریخ حرکت'),
+                    }}
+                    render={({ field: { onChange } }) => (
+                        <Calendar
+                            required
+                            placeholder='تاریخ حرکت'
+                            label='تاریخ حرکت'
+                            onChange={onChange}
+                            error={!!formState.errors.date}
+                            errorMessage={formState.errors.mobile?.message}
                         />
                     )}
                 />
