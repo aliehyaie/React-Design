@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Dayjs } from 'dayjs';
 import Text from '../Text/Text';
 import { DateTimeUtils } from '../../utils/dateTime';
-import { getAllDates } from '../../helper/calendar';
+import { getAllDates, getFormattedDateObject } from '../../helper/calendar';
 import { ICalendar } from './ICalendar';
 
 const CalendarCells: FC<Required<Pick<ICalendar, 'date' | 'events'>>> = ({
@@ -14,18 +14,6 @@ const CalendarCells: FC<Required<Pick<ICalendar, 'date' | 'events'>>> = ({
         Dayjs[] | []
     >([]);
 
-    const getFormattedDateObject = (date: Dayjs) => ({
-        day: date.date(),
-        gDay: date.calendar('gregory').date(),
-        month: date.month(),
-        year: date.year(),
-        dayOfWeek: date.weekday(),
-        event: events.find(event => date.isSame(event.date, 'day')),
-        isHoliday: dateTimeUtils.checkIsHoliday(date),
-        isCurrentMonth: date.month() === dateTimeUtils.getNow().month(),
-        isToday: dateTimeUtils.checkIsToday(date),
-    });
-
     useEffect(() => {
         setDatesOfCurrentMonth(getAllDates(date));
     }, [date]);
@@ -33,44 +21,51 @@ const CalendarCells: FC<Required<Pick<ICalendar, 'date' | 'events'>>> = ({
     return (
         <>
             {datesOfCurrentMonth.map(date => {
-                const formattedDay = getFormattedDateObject(date);
+                const formattedDate: ReturnType<
+                    typeof getFormattedDateObject
+                > & { event?: ICalendar['events'][0] } =
+                    getFormattedDateObject(date);
+                formattedDate.event = events.find(event =>
+                    date.isSame(event.date, 'day')
+                );
+
                 return (
                     <div
                         className={`relative  p-1 ${
-                            formattedDay.isCurrentMonth
+                            formattedDate.isCurrentMonth
                                 ? 'bg-white'
                                 : 'bg-grey-9'
                         }`}
-                        key={`${formattedDay.month} ${formattedDay.day}`}
+                        key={`${formattedDate.month} ${formattedDate.day}`}
                     >
                         <div className='relative h-full'>
                             <div className='absolute top-0 flex'>
                                 <Text
                                     className={`font-mono ${
-                                        formattedDay.isCurrentMonth
+                                        formattedDate.isCurrentMonth
                                             ? ''
                                             : 'text-disabled'
                                     } ${
-                                        formattedDay.isHoliday
+                                        formattedDate.isHoliday
                                             ? 'text-error'
                                             : ''
                                     }`}
-                                >{`${formattedDay.gDay}/`}</Text>
+                                >{`${formattedDate.gDay}/`}</Text>
                                 <Text
                                     className={`font-mono ${
-                                        formattedDay.isCurrentMonth
+                                        formattedDate.isCurrentMonth
                                             ? ''
                                             : 'text-disabled'
                                     } ${
-                                        formattedDay.isHoliday
+                                        formattedDate.isHoliday
                                             ? 'text-error'
                                             : ''
                                     }`}
                                 >
-                                    {formattedDay.day}
+                                    {formattedDate.day}
                                 </Text>
                             </div>
-                            {formattedDay.event ? (
+                            {formattedDate.event ? (
                                 <>
                                     <div
                                         className={
@@ -78,10 +73,10 @@ const CalendarCells: FC<Required<Pick<ICalendar, 'date' | 'events'>>> = ({
                                         }
                                     >
                                         <Text className='py-0.5 text-xs text-info'>
-                                            {formattedDay.event.title}:
+                                            {formattedDate.event.title}:
                                             {dateTimeUtils.getFormattedDate(
-                                                'HH:mm',
-                                                formattedDay.event.date
+                                                formattedDate.event.date,
+                                                'HH:mm'
                                             )}
                                         </Text>
                                     </div>

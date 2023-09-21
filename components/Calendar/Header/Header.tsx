@@ -43,7 +43,7 @@ const CalendarHeader: FC<IHeader> = ({ date, setDate }) => {
                 </div>
                 <div className='flex items-center gap-2.5'>
                     <Text className='text-sm'>
-                        {dateTimeUtils.getFormattedDate('MMMM YYYY', date)}
+                        {dateTimeUtils.getFormattedDate(date, 'MMMM YYYY')}
                     </Text>
                 </div>
                 <div
