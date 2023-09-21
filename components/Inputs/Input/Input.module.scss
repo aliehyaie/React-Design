@@ -5,9 +5,9 @@
     @apply text-text;
   }
 
-  &.readOnly {
+/*  &.readOnly {
     @apply text-grey-4;
-  }
+  }*/
 
   .input {
     @apply rounded-xl outline-0 w-full text-text border transition-all duration-200 border-grey-6 px-3 py-3 text-sm;
@@ -28,9 +28,9 @@
       @apply border-text;
     }
 
-    &:read-only {
+   /* &:read-only {
       @apply bg-grey-6 border-grey-6 cursor-auto;
-    }
+    }*/
 
     &:disabled {
       @apply border-disabled bg-white;
