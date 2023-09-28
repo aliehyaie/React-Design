@@ -3,7 +3,7 @@ import { IButton } from './IButton';
 import classes from './Button.module.scss';
 import Icon from '../Icon/Icon';
 import Link from 'next/link';
-import Loader from '../Loader/Loader';
+import Loading from '../Loading/Loading';
 
 const Button: FC<IButton> = ({
     label,
@@ -30,7 +30,7 @@ const Button: FC<IButton> = ({
                               ${className}`}
         >
             {isLoading ? (
-                <Loader />
+                <Loading />
             ) : leadingIconName ? (
                 <Icon iconName={leadingIconName} />
             ) : (
