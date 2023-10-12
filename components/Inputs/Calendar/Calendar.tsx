@@ -22,9 +22,9 @@ interface IInputCalendar extends Omit<IInput, 'onChange'> {
 //  5: Make it responsive
 
 const Calendar: FC<IInputCalendar> = props => {
-    const [open, toggle] = useToggle(false);
+    const [open, toggle, setOpen] = useToggle(false);
     const calendarRef = useRef(null);
-    useOnClickOutside(calendarRef, toggle);
+    useOnClickOutside(calendarRef, () => setOpen(false));
     const [isGregoryCalendar, isGregoryCalendarToggle] = useToggle(false);
     const dateTimeUtils = new DateTimeUtils(
         isGregoryCalendar ? 'gregory' : 'jalali',
