@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
-import { DateTimeUtils } from '../../../../utils/dateTime';
 import CalendarBodyDays from './Days';
+import CalendarBodyHeader from './Header';
+import { DateTimeUtils } from '../../../../utils/dateTime';
 import { getAllDates } from '../../../../helper/calendar';
-import CalendarBodyHeader from './Header/Header';
-import { ICalendarBodyProps } from './IBody';
+import type { FC } from 'react';
+import type {CalendarBodyProps} from "./props";
 
-const CalendarBody: FC<ICalendarBodyProps> = ({
+const CalendarBody: FC<CalendarBodyProps> = ({
     numberOfMonths = 1,
     setDate,
     date,

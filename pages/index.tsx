@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import React from 'react';
-import Text from '../components/Text/Text';
+import Text from '../components/Text';
 
 export default function Home() {
     return (

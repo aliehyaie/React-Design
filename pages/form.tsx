@@ -1,19 +1,18 @@
 // This page is being used to show how you can use input collection with React Hook Form
-import React from 'react';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import Input from '../components/Inputs/Input/Input';
-import Button from '../components/Button/Button';
+import Input from '../components/Inputs/Input';
+import Button from '../components/Button';
+import Select from '../components/Inputs/Select';
+import Checkbox from '../components/Inputs/Checkbox';
+import Radio from '../components/Inputs/Radio';
+import Switch from '../components/Inputs/Switch';
+import Range from '../components/Inputs/Range';
+import Calendar from '../components/Inputs/Calendar';
+import { useForm, Controller, type SubmitHandler } from 'react-hook-form';
 import { mobileRegex } from '../utils/validations/regex/regex';
 import {
     invalidFormatMessage,
     requiredMessage,
 } from '../utils/validations/messages/messages';
-import Select from '../components/Inputs/Select/Select';
-import Checkbox from '../components/Inputs/Checkbox/Checkbox';
-import Radio from '../components/Inputs/Radio/Radio';
-import Switch from '../components/Inputs/Switch/Switch';
-import Range from '../components/Inputs/Range/Range';
-import Calendar from '../components/Inputs/Calendar/Calendar';
 
 interface IFormValues {
     fullName: string;

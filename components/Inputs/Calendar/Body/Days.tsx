@@ -1,13 +1,13 @@
-import React, { type FC } from 'react';
-import Text from '../../../Text/Text';
-import { getFormattedDateObject } from '../../../../helper/calendar';
-import { If, Then } from '../../../If/If';
+import Text from '../../../Text';
+import { If, Then } from '../../../If';
 import { DateTimeUtils } from '../../../../utils/dateTime';
-import { ICalendarBodyProps } from './IBody';
+import { getFormattedDateObject } from '../../../../helper/calendar';
+import type { FC } from 'react';
+import type { CalendarBodyProps } from './props';
 
 const CalendarBodyDays: FC<
     Pick<
-        ICalendarBodyProps,
+        CalendarBodyProps,
         | 'isGregory'
         | 'datesOfCurrentMonth'
         | 'dateRange'

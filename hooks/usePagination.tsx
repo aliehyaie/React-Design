@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { IPagination } from '../components/Pagination/IPagination';
+import type { PaginationProps } from '../components/Pagination/props';
 
 export const DOTS = '...';
 
@@ -14,7 +14,7 @@ export const usePagination = ({
     siblingCount = 1,
     currentPage,
 }: Pick<
-    IPagination,
+    PaginationProps,
     'currentPage' | 'pageSize' | 'siblingCount' | 'totalCount'
 >): (string | number)[] => {
     const paginationRange = useMemo(() => {
@@ -24,7 +24,7 @@ export const usePagination = ({
         const totalPageNumbers = siblingCount + 5;
 
         /*
-          If the number of pages is less than the page numbers we want to show in our
+          Index the number of pages is less than the page numbers we want to show in our
           paginationComponent, we return the range [1..totalPageCount]
         */
         if (totalPageNumbers >= totalPageCount) {
@@ -38,7 +38,7 @@ export const usePagination = ({
         );
         /*
           We do not want to show dots if there is only one position left
-          after/before the left/right page count as that would lead to a change if our Pagination
+          after/before the left/right page count as that would lead to a change if our Index
           component size which we do not want
         */
         const shouldShowLeftDots = leftSiblingIndex > 2;
