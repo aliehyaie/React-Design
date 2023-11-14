@@ -1,9 +1,9 @@
-import React, { FC, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ITabs } from './ITabs';
+import {useEffect, useState, type FC } from 'react';
+import type { TabProps } from './props';
 
-const Tabs: FC<ITabs> = ({ tabsData, activeTabIndex = 1 }) => {
+const Tabs: FC<TabProps> = ({ tabsData, activeTabIndex = 1 }) => {
     const [activeTab, setActiveTab] = useState(activeTabIndex);
     const router = useRouter();
     useEffect(() => {

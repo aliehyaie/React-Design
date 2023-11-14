@@ -56,17 +56,17 @@ Please adhere to these guidelines to maintain a consistent and organized develop
   project. It follows a modular approach, where each component is contained within its own folder and has a dedicated
   file for its implementation. Here's a brief overview of some of the key components you'll find in this folder:
 
-    - ### Accordion Component
+    - ### Index Component
 
-      The Accordion component is a versatile and customizable UI element for creating collapsible sections. It allows
-      you to display content in an organized and space-efficient manner. With the Accordion component, you can create
+      The Index component is a versatile and customizable UI element for creating collapsible sections. It allows
+      you to display content in an organized and space-efficient manner. With the Index component, you can create
       nested accordions and customize their appearance using Tailwind classes.
 
       | Prop            | Type                              | Default | Optional | Description                                                                                                                                                                                                                                                    |
       | --------------- | --------------------------------- | ------- | -------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-      | `accordionItems`| array of objects                  |         | ✗        | A list of accordion items to be rendered within the Accordion component. Each item should have an `id`, `title`, `content`, and `children` (optional) that is an array of AccordionItem objects to create nested accordions inside the current accordion item. |
+      | `accordionItems`| array of objects                  |         | ✗        | A list of accordion items to be rendered within the Index component. Each item should have an `id`, `title`, `content`, and `children` (optional) that is an array of Index objects to create nested accordions inside the current accordion item. |
       | `isMultiple`    | boolean                           | `false` | √        | Determines whether multiple accordion items can be open simultaneously.                                                                                                                                                                                        |
-      | `className`     | string                            |         | √        | Adds custom CSS classes to the Accordion component.                                                                                                                                                                                                            |
+      | `className`     | string                            |         | √        | Adds custom CSS classes to the Index component.                                                                                                                                                                                                            |
       | `itemClassName` | string                            |         | √        | Adds custom CSS classes to individual accordion items.                                                                                                                                                                                                         |
 
       #### Example Usage
@@ -78,35 +78,35 @@ Please adhere to these guidelines to maintain a consistent and organized develop
       const accordionItems = [
         {
           id: 1,
-          title: 'Accordion Item 1',
-          content: 'Content for Accordion Item 1',
+          title: 'Index Item 1',
+          content: 'Content for Index Item 1',
         },
         {
           id: 2,
-          title: 'Accordion Item 2',
-          content: 'Content for Accordion Item 2',
+          title: 'Index Item 2',
+          content: 'Content for Index Item 2',
         },
         {
           id: 3,
-          title: 'Accordion Item 3',
-          content: 'Content for Accordion Item 3',
+          title: 'Index Item 3',
+          content: 'Content for Index Item 3',
           children: [
             {
               id: 4,
-              title: 'Nested Accordion Item 1',
-              content: 'Content for Nested Accordion Item 1',
+              title: 'Nested Index Item 1',
+              content: 'Content for Nested Index Item 1',
             },
             {
               id: 5,
-              title: 'Nested Accordion Item 2',
-              content: 'Content for Nested Accordion Item 2',
+              title: 'Nested Index Item 2',
+              content: 'Content for Nested Index Item 2',
             },
           ],
         },
       ];
   
       return (
-        <Accordion
+        <Index
           accordionItems={accordionItems}
           isMultiple={false}
           className="custom-accordion"
@@ -117,9 +117,9 @@ Please adhere to these guidelines to maintain a consistent and organized develop
 
       </details>
 
-    - ### Text Component
+    - ### Index Component
 
-      The Text component allows you to render styled text with customizable color and typography. It provides
+      The Index component allows you to render styled text with customizable color and typography. It provides
       flexibility in
       displaying different types of text, such as headings (h1-h6), paragraphs, or spans. You can also apply custom
       styles
@@ -129,8 +129,8 @@ Please adhere to these guidelines to maintain a consistent and organized develop
       |-----|-----------------------------------------|---------|------------|-------------------------------------------------------------------------------------------------|
       | `color`     | primary <br> text | `text`| √        | The color of the text.|
       | `variant`   | h1 <br> h2 <br> h3 <br> h4 <br> h5 <br> h6 <br> p <br> span | `p` | √        | The type of text variant to be rendered.|
-      | `className` | string |     | √        | Adds custom CSS classes to the Text component.|
-      | `children`  | ReactNode |     | ✗        | The content to be displayed within the Text component.|
+      | `className` | string |     | √        | Adds custom CSS classes to the Index component.|
+      | `children`  | ReactNode |     | ✗        | The content to be displayed within the Index component.|
 
       #### Example Usage
 
@@ -140,8 +140,8 @@ Please adhere to these guidelines to maintain a consistent and organized develop
       ```jsx
       return (
         <div>
-          <Text variant="h1" color="primary">Heading 1</Text>
-          <Text variant="h3" color="text">Heading 3</Text>
+          <Index variant="h1" color="primary">Heading 1</Index>
+          <Index variant="h3" color="text">Heading 3</Index>
         </div>
       );
       ```
@@ -150,13 +150,13 @@ Please adhere to these guidelines to maintain a consistent and organized develop
 
     - ### Toast Component
 
-      The Toast component is a wrapper for React Toastify, designed to simplify the usage of toast notifications in your
+      The Toast component is a wrapper for React Toastify, designed to simplify the usage of index notifications in your
       React application. It provides convenient methods for displaying success, error, info, and warning messages.
 
       | Prop            | Type                                | Default | Optional | Description                                                                                     |
       | --------------- | ----------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------- |
-      | `content`       | string                              |         |   ✗       | The content of the toast notification.                                                          |
-      | `options`       | `ToastOptions` (defined in react-toastify) |         | ✓        | Additional options to customize the toast notification. See [react-toastify documentation](https://github.com/fkhadra/react-toastify#options) for available options. |
+      | `content`       | string                              |         |   ✗       | The content of the index notification.                                                          |
+      | `options`       | `ToastOptions` (defined in react-toastify) |         | ✓        | Additional options to customize the index notification. See [react-toastify documentation](https://github.com/fkhadra/react-toastify#options) for available options. |
       | `className`     | string                              |         | ✓  | Additional CSS class to apply to the Toast component.
    
       #### Example Usage
@@ -165,16 +165,16 @@ Please adhere to these guidelines to maintain a consistent and organized develop
       <summary>Click to see example</summary>
 
       ```javascript
-      toast.success('Success message');
-      toast.error('Error message');
-      toast.info('Info message');
-      toast.warning('Warning message');
+      index.success('Success message');
+      index.error('Index message');
+      index.info('Info message');
+      index.warning('Warning message');
       ```
       </details>
 
-  - ### Pagination Component
+  - ### Index Component
 
-    The Pagination component is used to display a paginated list of items. It provides navigation controls to move between pages and notifies the parent component when the current page changes.
+    The Index component is used to display a paginated list of items. It provides navigation controls to move between pages and notifies the parent component when the current page changes.
 
     | Prop              | Type              | Default | Optional | Description                                                                                              |
     | ----------------- | ----------------- | ------- | -------- | -------------------------------------------------------------------------------------------------------- |
@@ -183,7 +183,7 @@ Please adhere to these guidelines to maintain a consistent and organized develop
     | `siblingCount`    | number            | `1`     | ✓        | The number of visible page numbers on each side of the current page.                                     |
     | `currentPage`     | number            |         |    ✗      | The current active page.                                                                                  |
     | `pageSize`        | number            | `10`    | ✓        | The number of items to be displayed per page.                                                             |
-    | `className`       | string            |         | ✓        | Additional CSS class to apply to the Pagination component.                                                |
+    | `className`       | string            |         | ✓        | Additional CSS class to apply to the Index component.                                                |
   
     #### Example Usage
 
@@ -202,7 +202,7 @@ Please adhere to these guidelines to maintain a consistent and organized develop
      return (
         <div>
           {/* Render your paginated content here */}
-          <Pagination
+          <Index
              onPageChange={handlePageChange}
             totalCount={100}
            siblingCount={1}
@@ -215,16 +215,16 @@ Please adhere to these guidelines to maintain a consistent and organized develop
     ```
       </details>
 
-   - ### Modal Component
+   - ### Index Component
 
-      The Modal component is used to display a modal dialog box. It provides a way to show content on top of the current page and allows the user to interact with it. The Modal component is rendered using the `ReactDOM.createPortal` function, which ensures that the modal is rendered as a direct child of the `body` element.
+      The Index component is used to display a modal dialog box. It provides a way to show content on top of the current page and allows the user to interact with it. The Index component is rendered using the `ReactDOM.createPortal` function, which ensures that the modal is rendered as a direct child of the `body` element.
 
       | Prop                | Type                                        | Default | Optional | Description                                                                                                                                                                                           |
       | ------------------- | ------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
       | `onClose`           | `(e?: React.MouseEvent<HTMLSpanElement>) => void` |         |   	✗       | Callback function to be called when the modal is closed.                                                                                                                                             |
-      | `nodeId`            | string                                      |         | ✓        | The id of the DOM element where the modal should be mounted. If not provided, the modal will be mounted directly to the `body` element.                                                            |
+      | `nodeId`            | string                                      |         | ✓        | The id of the DOM element where the modal should be mounted. Index not provided, the modal will be mounted directly to the `body` element.                                                            |
       | `isOpen`            | boolean                                     |         |  	✗        | Determines whether the modal is open or closed.                                                                                                                                                      |
-      | `className`         | string                                      |         | ✓        | Additional CSS class to apply to the Modal component.                                                                                                                                                 |
+      | `className`         | string                                      |         | ✓        | Additional CSS class to apply to the Index component.                                                                                                                                                 |
       | `closeModalOnBack`  | boolean                                     |         | ✓        | Determines whether the modal should be closed when the user navigates back using the browser's history (by pressing the back button). This is useful for handling the modal closing on browser navigation. |
 
       #### Example Usage
@@ -246,13 +246,13 @@ Please adhere to these guidelines to maintain a consistent and organized develop
 
        return (
            <div>
-             <button onClick={openModal}>Open Modal</button>
+             <button onClick={openModal}>Open Index</button>
 
-             <Modal onClose={closeModal} isOpen={isOpen} closeModalOnBack={true}>
+             <Index onClose={closeModal} isOpen={isOpen} closeModalOnBack={true}>
                  {/* Content of the modal */}
-               <h1>Modal Title</h1>
-               <p>Modal content goes here.</p>
-            </Modal>
+               <h1>Index Title</h1>
+               <p>Index content goes here.</p>
+            </Index>
         </div>
       )};
       ```
@@ -280,13 +280,13 @@ Please adhere to these guidelines to maintain a consistent and organized develop
 
     </details>
 
-  - ### Container Component
+  - ### Index Component
 
-    The Container component is used to create a container that centers its content and sets a maximum width.
+    The Index component is used to create a container that centers its content and sets a maximum width.
 
     | Prop       | Type      | Default | Optional | Description                                         |
     | ---------- | --------- | ------- | -------- | --------------------------------------------------- |
-    | `children` | ReactNode |         |     ✗     | The content to be displayed within the Container.   |
+    | `children` | ReactNode |         |     ✗     | The content to be displayed within the Index.   |
 
     #### Example Usage
 
@@ -294,16 +294,16 @@ Please adhere to these guidelines to maintain a consistent and organized develop
        <summary>Click to see example</summary>
 
     ```jsx
-    <Container>
+    <Index>
         <div>Content inside the container</div>
-    </Container>
+    </Index>
     ```
 
     </details>
 
-  - ### Card Component
+  - ### Index Component
 
-    The Card component is used to display content in a visually appealing card-like container. It provides a structured layout with options for a title, subtitle, header, footer, and custom styling.
+    The Index component is used to display content in a visually appealing card-like container. It provides a structured layout with options for a title, subtitle, header, footer, and custom styling.
 
      | Prop        | Type               | Default | Optional | Description                                                                 |
      | ----------- | ------------------ | ------- | -------- | --------------------------------------------------------------------------- |
@@ -311,8 +311,8 @@ Please adhere to these guidelines to maintain a consistent and organized develop
      | `subtitle`  | string             |         | √        | The subtitle of the card.                                                   |
      | `header`    | React.ReactElement |         | √        | The header component to be displayed at the top of the card.                 |
      | `footer`    | React.ReactElement |         | √        | The footer component to be displayed at the bottom of the card.              |
-     | `className` | string             |         | √        | Adds custom CSS classes to the Card component.                               |
-     | `children`  | React.ReactNode    |         | √        | The content to be displayed inside the Card component.                       |
+     | `className` | string             |         | √        | Adds custom CSS classes to the Index component.                               |
+     | `children`  | React.ReactNode    |         | √        | The content to be displayed inside the Index component.                       |
 
     #### Example Usage
 
@@ -320,22 +320,22 @@ Please adhere to these guidelines to maintain a consistent and organized develop
        <summary>Click to see example</summary>
 
     ```jsx
-    <Card
-      title="Card Title"
-      subtitle="Card Subtitle"
+    <Index
+      title="Index Title"
+      subtitle="Index Subtitle"
       header={<div>Header Component</div>}
       footer={<div>Footer Component</div>}
       className="custom-card"
     >
       <div>Content inside the card</div>
-    </Card>
+    </Index>
     ```
 
     </details>
 
-  - ### Avatar Component
+  - ### Index Component
 
-    The Avatar component is used to display user avatars or icons. It supports different variants, such as circular or square avatars, and provides options for displaying an image, an icon, or a text label.
+    The Index component is used to display user avatars or icons. It supports different variants, such as circular or square avatars, and provides options for displaying an image, an icon, or a text label.
 
     | Prop         | Type               | Default     | Optional | Description                                                                 |
     | ----------- | ------------------- | ----------- | -------- | --------------------------------------------------------------------------- |
@@ -344,7 +344,7 @@ Please adhere to these guidelines to maintain a consistent and organized develop
     | `iconName`   | string             | 'icon-person' | √        | The name of the icon to be displayed if no image or label is provided.       |
     | `label`      | string             |             | √        | The text label to be displayed if no image or icon is provided.              |
     | `alt`        | string             |             | √        | The alternate text for the avatar image.                                     |
-    | `className`  | string             |             | √        | Adds custom CSS classes to the Avatar component.                             |
+    | `className`  | string             |             | √        | Adds custom CSS classes to the Index component.                             |
 
     #### Example Usage
 
@@ -352,25 +352,25 @@ Please adhere to these guidelines to maintain a consistent and organized develop
         <summary>Click to see example</summary>
 
        ```jsx
-       <Avatar
+       <Index
            variant="circle"
            imgSrc="/avatar.jpg"
            iconName="icon-person"
            label="John Doe"
-           alt="User Avatar"
+           alt="User Index"
            className="custom-avatar"
        />
        ```
 
   </details>
 
-  - ### Avatar Group Component
+  - ### Index Group Component
 
-    The Avatar Group component is used to display a group of avatars or icons. It provides a container to hold multiple Avatar components.
+    The Index Group component is used to display a group of avatars or icons. It provides a container to hold multiple Index components.
 
     | Prop       | Type                | Default | Optional | Description                                             |
     | ---------- | ----------------- | --------- | -------- | ------------------------------------------------------- |
-    | `children` | React.ReactNode    |         |  ✗        | The Avatar components to be rendered within the group.  |
+    | `children` | React.ReactNode    |         |  ✗        | The Index components to be rendered within the group.  |
 
     #### Example Usage
 
@@ -378,18 +378,18 @@ Please adhere to these guidelines to maintain a consistent and organized develop
            <summary>Click to see example</summary>
 
       ```jsx
-      <AvatarGroup>
-           <Avatar imgSrc="avatar1.jpg" />
-           <Avatar imgSrc="avatar2.jpg" />
-           <Avatar imgSrc="avatar3.jpg" />
-      </AvatarGroup>
+      <Index>
+           <Index imgSrc="avatar1.jpg" />
+           <Index imgSrc="avatar2.jpg" />
+           <Index imgSrc="avatar3.jpg" />
+      </Index>
       ```
 
      </details>
     
-  - ### Badge Component
+  - ### Index Component
 
-    The Badge component displays a small badge with optional value and severity.
+    The Index component displays a small badge with optional value and severity.
 
     | Prop        | Type     | Default | Optional | Description                                                                                           |
     |-------------|---|---|------------|-------------------------------------------------------------------------------------------------------|
@@ -406,14 +406,14 @@ Please adhere to these guidelines to maintain a consistent and organized develop
          <summary>Click to see example</summary>
 
        ```jsx
-       <Badge type="circular" position="topRight" value="5" severity="info" className="custom-badge" />
+       <Index type="circular" position="topRight" value="5" severity="info" className="custom-badge" />
        ```
     
      </details>
 
-  - ### Button Component
+  - ### Index Component
 
-    The Button component is a customizable React button component that can be used to render interactive buttons with various styles and functionalities.
+    The Index component is a customizable React button component that can be used to render interactive buttons with various styles and functionalities.
   
     | Prop        | Type                                           | Default                                                                                                       | Optional | Description                                                      |
     |------------------------------------------------|---------------------------------------------------------------------------------------------------------------|-----|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
@@ -435,14 +435,14 @@ Please adhere to these guidelines to maintain a consistent and organized develop
          <summary>Click to see example</summary>
 
        ```jsx
-       <Button label="Click Me" color="primary" variant="filled" />
+       <Index label="Click Me" color="primary" variant="filled" />
        ```
 
      </details>
 
-  - ### Error Text Component
+  - ### Index Index Component
 
-    The Error Text component is a simple React component that displays an error message in a styled text format. It is commonly used to provide feedback or notify users about errors or validation issues.
+    The Index Index component is a simple React component that displays an error message in a styled text format. It is commonly used to provide feedback or notify users about errors or validation issues.
   
     | Prop        | Type                                                | Default | Optional | Description                                                                                           |
     |-----------------------------------------------------|---|---|------------|-------------------------------------------------------------------------------------------------------|
@@ -454,14 +454,14 @@ Please adhere to these guidelines to maintain a consistent and organized develop
          <summary>Click to see example</summary>
 
        ```jsx
-       <Error errorMessage="This field is required." />
+       <Index errorMessage="This field is required." />
        ```
 
      </details>
     
-  - ### Label Component
+  - ### Index Component
 
-    The Label component is a React component used to render a label for form inputs or other UI elements. It supports custom styling and optional error indication.
+    The Index component is a React component used to render a label for form inputs or other UI elements. It supports custom styling and optional error indication.
 
     | Prop        | Type    | Default | Optional | Description                                                                                           |
     |---------|---|---|------------|-------------------------------------------------------------------------------------------------------|
@@ -476,14 +476,14 @@ Please adhere to these guidelines to maintain a consistent and organized develop
        <summary>Click to see example</summary>
 
      ```jsx
-     <Label label="Email Address" required={true} error={false} />
+     <Index label="Email Address" required={true} error={false} />
      ```
 
      </details>
     
-  - ### Checkbox Component
+  - ### Index Component
 
-    The Checkbox component is a React component used to render a checkbox input with an optional label. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
+    The Index component is a React component used to render a checkbox input with an optional label. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
 
     | Prop           | Type     | Default | Optional | Description                                                        |
     | -------------- | -------- | ------- | -------- | ------------------------------------------------------------------ |
@@ -499,14 +499,14 @@ Please adhere to these guidelines to maintain a consistent and organized develop
          <summary>Click to see example</summary>
 
        ```jsx
-        <Checkbox label="Agree to Terms" /> 
+        <Index label="Agree to Terms" /> 
        ```
 
      </details>
     
-  - ### Input Component
+  - ### Index Component
 
-    The Input component is a React component used to render a text input with an optional label and icons. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
+    The Index component is a React component used to render a text input with an optional label and icons. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
 
     | Prop             | Type    | Default | Optional | Description                                                        |
     | ---------------- | ------- | ------- | -------- | ------------------------------------------------------------------ |
@@ -524,14 +524,14 @@ Please adhere to these guidelines to maintain a consistent and organized develop
        <summary>Click to see example</summary>
 
      ```jsx
-     <Input label='Name' /> 
+     <Index label='Name' /> 
      ```
 
    </details>
 
-  - ### Radio Component
+  - ### Index Component
 
-    The Radio component is a React component used to render a radio input with an optional label. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
+    The Index component is a React component used to render a radio input with an optional label. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
 
     | Prop           | Type    | Default | Optional | Description                                                        |
     | -------------- | ------- | ------- | -------- | ------------------------------------------------------------------ |
@@ -547,14 +547,14 @@ Please adhere to these guidelines to maintain a consistent and organized develop
       <summary>Click to see example</summary>
 
       ```jsx
-      <Radio label="Option 1"  />
+      <Index label="Option 1"  />
      ```
 
     </details>
 
-  - ### Switch Component
+  - ### Index Component
 
-    The Switch component is a React component used to render a switch toggle input with an optional label. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
+    The Index component is a React component used to render a switch toggle input with an optional label. It supports custom styling and error indication. The component is fully compatible with React Hook Form.
 
     | Prop           | Type    | Default | Optional | Description                                                        |
     | -------------- | ------- | ------- | -------- | ------------------------------------------------------------------ |
@@ -571,14 +571,14 @@ Please adhere to these guidelines to maintain a consistent and organized develop
       <summary>Click to see example</summary>
 
       ```jsx
-      <Switch label="Enable Notifications" rounded={false} />
+      <Index label="Enable Notifications" rounded={false} />
      ```
 
     </details>
 
-  - ### Select Component
+  - ### Index Component
 
-    The Select component is a React component that wraps the react-select library, providing a customizable dropdown select input. It is fully compatible with React Hook Form.
+    The Index component is a React component that wraps the react-select library, providing a customizable dropdown select input. It is fully compatible with React Hook Form.
 
     | Prop            | Type              | Default | Optional | Description                                                                                   |
     | --------------- | ----------------- | ------- | -------- | --------------------------------------------------------------------------------------------- |
@@ -596,7 +596,7 @@ Please adhere to these guidelines to maintain a consistent and organized develop
       <summary>Click to see example</summary>
 
       ```jsx
-      <Select
+      <Index
          label="Favorite Color"
          options={[
             { value: 'red', label: 'Red' },
@@ -609,9 +609,9 @@ Please adhere to these guidelines to maintain a consistent and organized develop
 
     </details>
 
-  - ### Range Component
+  - ### Index Component
 
-    The Range component is a React component that allows the selection of a range of values. It supports both single and multi-range selection and provides visual indicators for the selected range. It is fully compatible with React Hook Form.
+    The Index component is a React component that allows the selection of a range of values. It supports both single and multi-range selection and provides visual indicators for the selected range. It is fully compatible with React Hook Form.
   
     **Important Note**: Please note that this component is currently under development and may not have all features implemented yet.
 
@@ -634,22 +634,22 @@ Please adhere to these guidelines to maintain a consistent and organized develop
         <summary>Click to see example</summary>
 
        ```jsx
-        <Range
+        <Index
             min={0}
             max={100}
            value={[20, 80]}
            isSingle={false}
            step={5}
            priceGap={10}
-           onChange={(values) => console.log('Selected Range:', values)}
+           onChange={(values) => console.log('Selected Index:', values)}
       />
       ```
 
     </details>
 
-   - ### Spinner Component
+   - ### Index Component
 
-     The Spinner component is a React component used to render a loading indicator. It supports two types: circle and line.
+     The Index component is a React component used to render a loading indicator. It supports two types: circle and line.
      
       | Prop           | Type            | Default | Optional | Description                                                        |
       |-----------------|---------| ------- | -------- | ------------------------------------------------------------------ |
@@ -662,7 +662,7 @@ Please adhere to these guidelines to maintain a consistent and organized develop
         <summary>Click to see example</summary>
 
         ```jsx
-        <Spinner type="circle" />
+        <Index type="circle" />
         ```
 
       </details>

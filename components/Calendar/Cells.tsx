@@ -1,11 +1,11 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Dayjs } from 'dayjs';
-import Text from '../Text/Text';
+import {useEffect, useState, type FC } from 'react';
+import Text from '../Text';
 import { DateTimeUtils } from '../../utils/dateTime';
 import { getAllDates, getFormattedDateObject } from '../../helper/calendar';
-import { ICalendar } from './ICalendar';
+import type { CalendarProps } from './props';
+import type { Dayjs } from 'dayjs';
 
-const CalendarCells: FC<Required<Pick<ICalendar, 'date' | 'events'>>> = ({
+const CalendarCells: FC<Required<Pick<CalendarProps, 'date' | 'events'>>> = ({
     date,
     events,
 }) => {
@@ -23,7 +23,7 @@ const CalendarCells: FC<Required<Pick<ICalendar, 'date' | 'events'>>> = ({
             {datesOfCurrentMonth.map(date => {
                 const formattedDate: ReturnType<
                     typeof getFormattedDateObject
-                > & { event?: ICalendar['events'][0] } =
+                > & { event?: CalendarProps['events'][0] } =
                     getFormattedDateObject(date);
                 formattedDate.event = events.find(event =>
                     date.isSame(event.date, 'day')

@@ -1,6 +1,5 @@
-import React from 'react';
+import Text from '../Text';
 import { DateTimeUtils } from '../../utils/dateTime';
-import Text from '../Text/Text';
 
 const CalendarDays = () => {
     const dateTimeUtils = new DateTimeUtils();

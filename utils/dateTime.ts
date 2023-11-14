@@ -1,8 +1,9 @@
-import dayjs, { Dayjs, OpUnitType } from 'dayjs';
+import dayjs from 'dayjs';
 import jalaliDay from 'jalaliday';
 import weekdayPlugin from 'dayjs/plugin/weekday';
 import isTodayPlugin from 'dayjs/plugin/isToday';
 import isBetween from 'dayjs/plugin/isBetween';
+import type { Dayjs, OpUnitType } from 'dayjs';
 
 dayjs.extend(jalaliDay);
 dayjs.extend(weekdayPlugin);
